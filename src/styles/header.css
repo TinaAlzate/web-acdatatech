@@ -1,0 +1,52 @@
+.contain-header{
+    min-height: 70vh;
+    position: relative;
+    background-color: #1466c3; 
+    overflow: hidden;
+    & .circle{
+        right:0;
+        position: absolute;
+        width:40rem;
+        height: 40rem;
+        border-radius:50%;
+        background: linear-gradient(#165aa7, #1466c3);
+    }
+    & .sub-contain{
+        overflow: hidden;
+        position:absolute;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        & .contain-text{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            & h1{
+                font-size: 1.8rem;
+                color:white;
+            }
+            & p{
+                color:white;
+            }
+            & button{
+                background-color: white;
+                color: #000;
+                
+            }
+        }
+    }
+}
+@media(width < 768px){
+    .contain-header{
+        min-height: 650px;
+    }
+}
+@media(width > 576px){
+    .contain-header{
+        width: 70%;
+        border-radius: 2rem;
+    }  
+}
