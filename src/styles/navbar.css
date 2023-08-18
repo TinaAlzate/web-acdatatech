@@ -1,8 +1,38 @@
-nav{
-    & .navbar-toggler:focus {
-        box-shadow: none !important;
+.navbar {
+  z-index: 40;
+  display: flex;
+  top: 0;
+  width: 100%;
+  padding: 0.3rem 3rem !important;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(0.625rem);
+
+  & .logo-nav {
+    width: 10%;
+    & .img-logo{
+      width: 100%;
     }
-    & .nav-link{
-        color:#000;
-    }
+  }
+
+  & .navbar-toggler:focus {
+    box-shadow: none !important;
+  }
+
+  & .nav-link {
+    color: #000;
+    letter-spacing: 0.1rem;
+  }
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  & .dropdown-menu {
+    left: auto !important;
+    margin-top: 0 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+
 }
+

@@ -1,0 +1,61 @@
+.section {
+  margin-top: 5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+
+  & .section-contact {
+    width: 80%;
+    padding: 2rem 5rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-image: radial-gradient(circle at 80% 36%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 22% 10%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 17% 26%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 82% 24%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 55% 69%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 56% 67%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 90% 17%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 73% 24%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 80% 31%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 18% 25%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 36% 40%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 33% 21%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 34% 77%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 65% 41%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 29% 89%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 63% 6%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 54% 74%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 40% 31%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 5%, transparent 5%, transparent 100%), linear-gradient(45deg, rgb(20, 102, 195), rgb(19, 30, 181));
+
+    & .contain-contact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      & .contact-text {
+        color: white;
+        flex: 1;
+      }
+
+      & .contact-form {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        & form {
+          display: flex;
+          flex-direction: column;
+
+          & label {
+            color: white;
+          }
+
+          & #email {
+            display: inline-block;
+            padding: 0.25rem 0.7rem;
+            width: 15.625rem;
+            border: 0.063rem solid #0000;
+            border-radius: 0.25rem;
+            background-color: #fff;
+            outline: 0;
+            color: rgb(8, 7, 7);
+            transition: border .1s linear, background-color .1s linear;
+          }
+
+          & #email:focus {
+            border-color: #fff;
+            box-shadow: #fff 0 0 0.188rem 0;
+          }
+        }
+      }
+    }
+  }
+}
