@@ -12,5 +12,5 @@ export const Service = ({ title, link, path }) => {
 }
 
 Service.defaultProps = {
-  link: 'View services'
+  link: 'Ver servicios'
 }

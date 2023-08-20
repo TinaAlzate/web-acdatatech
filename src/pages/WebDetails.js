@@ -1,14 +1,15 @@
 import { Service } from '../components/Service'
+import '../styles/web-details.css'
 
 const WebDetails = () => {
   return (
     <section>
-      <div className="container other-services">
-        <Service path="/cloud" title="Cloud services" />
-        <Service path="/maintenance" title="Maintenance" />
-        <Service path="/web-development" title="Web development" />
-        <Service path="/business-optimization" title="Business optimization" />
-        <Service path="/business-intelligence" title="Business intelligence" />
+      <div className="container-fluid web-details">
+        <Service path="/security" title="Seguridad" />
+        <Service path="/maintenance" title="Mantenimiento" />
+        <Service path="/cloud" title="Servicios en la nube" />
+        <Service path="/business-optimization" title="Optimización de negocio" />
+        <Service path="/business-intelligence" title="Inteligencia de negocio" />
       </div>
     </section>
   )

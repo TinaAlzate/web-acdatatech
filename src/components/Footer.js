@@ -17,11 +17,11 @@ const Footer = () => {
            <div className="list-services">
              <ul>
                <li><Link to="/security">Seguridad</Link></li>
-               <li><Link to="/">Mantenimiento</Link></li>
-               <li><Link to="/">Desarrollo web</Link></li>
-               <li><Link to="/">Servicios en la nube</Link></li>
-               <li><Link to="/">Optimización de negocios</Link></li>
-               <li><Link to="/">Inteligencia de negocio</Link></li>
+              <li><Link to="/maintenance">Mantenimiento</Link></li>
+              <li><Link to="/web-development">Desarrollo web</Link></li>
+              <li><Link to="/cloud">Servicios en la nube</Link></li>
+              <li><Link to="/business-optimization">Optimización de negocios</Link></li>
+              <li><Link to="/business-intelligence">Inteligencia de negocio</Link></li>
              </ul>
            </div>
          </div>
@@ -29,14 +29,14 @@ const Footer = () => {
            <h6>Contáctanos</h6>
            <span>Teléfono: +34 123 456 789</span>
            <span>Correo: contact@acdatatech.com</span>
-           <button className="button-footer">Contactar</button>
+           <Link to="/contact" className="button-footer">Contactar</Link>
          </div>
        </div>
        <hr />
        <div className="policy-contain">
          <ul>
-           <Link className="item-link" to="">Política de privacidad</Link>
-           <Link className="item-link" to="">Política de cookies</Link>
+          <Link className="item-link" to="/privacy-policy">Política de privacidad</Link>
+          <Link className="item-link" to="/cookies-policy">Política de cookies</Link>
          </ul>
        </div>
     </footer>

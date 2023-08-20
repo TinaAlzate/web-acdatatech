@@ -16,7 +16,7 @@ const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse flex-grow-0" id="menu">
         <div className="navbar-nav">
-          <Link className="nav-link" to="/">Home</Link>
+          <Link className="nav-link" to="/">Inicio</Link>
           <div to="/services">
             <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Servicios

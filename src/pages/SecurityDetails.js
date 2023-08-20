@@ -1,14 +1,15 @@
 import { Service } from '../components/Service'
+import '../styles/security-details.css'
 
 const SecurityDetails = () => {
   return (
     <section>
-      <div className="container other-services">
-        <Service path="/security" title="Security" />
-        <Service path="/maintenance" title="Maintenance" />
-        <Service path="/web-development" title="Web development" />
-        <Service path="/business-optimization" title="Business optimization" />
-        <Service path="/business-intelligence" title="Business intelligence" />
+      <div className="container-fluid security-details">
+        <Service path="/maintenance" title="Mantenimiento" />
+        <Service path="/cloud" title="Servicios en la nube" />
+        <Service path="/web-development" title="Desarrollo web" />
+        <Service path="/business-optimization" title="Optimización de negocio" />
+        <Service path="/business-intelligence" title="Inteligencia de negocio" />
       </div>
     </section>
   )

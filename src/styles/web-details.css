@@ -1,20 +1,10 @@
-.container-items-details{
-  margin-bottom: 5rem;
-  display: grid;
-  place-items: center;
-  row-gap: 2rem;
-  margin-bottom:10rem;
-  grid-template-rows: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-}
-.other-services {
-  margin-top: 5rem;
+.web-details {
+  margin: 5rem 0;
   display: grid;
   column-gap: 2rem;
   row-gap: 2rem;
-  place-content: center;
-  grid-template-rows: repeat(3, 12rem) ;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-rows: repeat(3, 12rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
 
   & a:nth-child(1) {
     grid-area: 1 / 1 / 3 / 1;
@@ -23,16 +13,19 @@
   }
 
   & a:nth-child(2) {
+    grid-area: 1 / 2 / 2 / 2;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 14%, rgba(31, 31, 31, 0.7) 100%), url("../assets/images/maintenance.png");
   }
 
 
   & a:nth-child(3) {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 14%, rgba(31, 31, 31, 0.7) 100%), url("../assets/images/web-development.png");
+    grid-area: 2 / 2 / 3 / 2;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 14%, rgba(31, 31, 31, 0.7) 100%), url("../assets/images/cloud-services.png");
 
   }
 
   & a:nth-child(4) {
+    grid-area: 3 / 1 / 4 / 1;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 14%, rgba(31, 31, 31, 0.7) 100%), url("../assets/images/business-optimization.png");
   }
 

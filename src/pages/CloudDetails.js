@@ -1,16 +1,15 @@
-/* eslint-disable no-unused-vars */
 import { Service } from '../components/Service'
-import '../styles/services-details.css'
+import '../styles/cloud-details.css'
 
 const CloudDetails = () => {
   return (
     <section>
-      <div className="container other-services">
-        <Service path="/security" title="Security" />
-        <Service path="/maintenance" title="Maintenance" />
-        <Service path="/web-development" title="Web development" />
-        <Service path="/business-optimization" title="Business optimization" />
-        <Service path="/business-intelligence" title="Business intelligence" />
+      <div className="container-fluid cloud-details">
+        <Service path="/security" title="Seguridad" />
+        <Service path="/maintenance" title="Mantenimiento" />
+        <Service path="/web-development" title="Desarrollo web" />
+        <Service path="/business-optimization" title="Optimización de negocio" />
+        <Service path="/business-intelligence" title="Inteligencia de negocio" />
       </div>
     </section>
   )

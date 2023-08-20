@@ -21,6 +21,9 @@
   & .nav-link {
     color: #000;
     letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition-property: all;
+    transition-duration: 2s;
   }
   .nav-link:hover,
   .nav-link:focus {

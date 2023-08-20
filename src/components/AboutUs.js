@@ -10,17 +10,17 @@ const AboutUs = () => {
       <div className="contain-about">
         <div className='item-about'>
           <IconCompromise />
-          <h3>Compromise</h3>
+          <h3>Compromiso</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         <div className='item-about'>
           <IconPassion />
-          <h3>Passion</h3>
+          <h3>Pasión</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         <div className='item-about'>
           <IconInnovation />
-          <h3>Innovation</h3>
+          <h3>Innovación</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
       </div>
