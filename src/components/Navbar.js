@@ -25,7 +25,7 @@ const Navbar = () => {
               <Link className="dropdown-item" to="/security">Seguridad</Link>
               <Link className="dropdown-item" to="/maintenance">Mantenimiento</Link>
               <Link className="dropdown-item" to="/web-development">Desarrollo web</Link>
-              <Link className="dropdown-item" to="/cloud">Servicio de cloud</Link>
+              <Link className="dropdown-item" to="/cloud">Servicios en la nube</Link>
               <Link className="dropdown-item" to="/business-optimization">Optimización de negocio</Link>
               <Link className="dropdown-item" to="/business-intelligence">Inteligencia de negocio</Link>
             </div>

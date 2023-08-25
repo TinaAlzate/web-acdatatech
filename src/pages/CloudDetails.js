@@ -4,6 +4,9 @@ import '../styles/cloud-details.css'
 const CloudDetails = () => {
   return (
     <section>
+      <div className="header-cloud">
+        <h2>Servicios en la nube</h2>
+      </div>
       <div className="container-fluid cloud-details">
         <Service path="/security" title="Seguridad" />
         <Service path="/maintenance" title="Mantenimiento" />

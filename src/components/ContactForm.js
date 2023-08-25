@@ -1,11 +1,9 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import { Link, useLocation } from 'react-router-dom'
 import '../styles/contact.css'
-import { Link, useParams } from 'react-router-dom'
 
-const ContactForm = () => {
-  const { service: defaultService } = useParams()
-  console.log(defaultService)
+const ContactForm = ({ page, title, subtitle }) => {
   const contactSchema = Yup.object().shape(
     {
       email: Yup.string()
@@ -21,11 +19,26 @@ const ContactForm = () => {
     }
   )
 
+  const location = useLocation()
+  const urlValue = location.pathname
+
+  const selectOptions = [
+    { value: '', label: 'Seleccione un servicio' },
+    { value: 'security', label: 'Seguridad' },
+    { value: 'maintenance', label: 'Mantenimiento' },
+    { value: 'web-development', label: 'Desarrollo web' },
+    { value: 'cloud-services', label: 'Servicio de cloud' },
+    { value: 'business-optimization', label: 'Optimización de negocio' },
+    { value: 'business-intelligence', label: 'Inteligencia de negocio' }
+  ]
+
+  const selectedOption = selectOptions.find(service => `/${service.value}` === urlValue)
+
   const initialCredentials = {
     person_id: 2,
     email: '',
     message: '',
-    service: defaultService || '',
+    service: selectedOption ? selectedOption.value : '',
     checkbox_req: '',
     checkbox_opc: false
   }
@@ -36,12 +49,15 @@ const ContactForm = () => {
   // }
 
   return (
-    <div className='container'>
-      <h3>Contacta con AC data tech</h3>
+    <section className={`container-fluid section-form ${page === 'page-services' && 'page-services'} `} id="contact">
+      <div className="header-form">
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
+      </div>
       <Formik
         initialValues={initialCredentials}
         validationSchema={contactSchema}
-        // onSubmit={handleSubmit}
+      // onSubmit={handleSubmit}
       >
 
         {({
@@ -51,87 +67,82 @@ const ContactForm = () => {
         }) => (
           <Form className='form'>
 
-            <label htmlFor="email">
-              <span>Correo electronico</span>
-              <Field className="input" id="email" type="email" name="email" placeholder="example@email.com" />
-            </label>
-            {
-              errors.email && touched.email &&
-              (
-                <ErrorMessage name="email" component='p'></ErrorMessage>
-              )
-            }
+              <label htmlFor="email">
+                <span>Correo electronico</span>
+                <Field className="input" id="email" type="email" name="email" placeholder="example@email.com" />
+              </label>
+              {
+                errors.email && touched.email &&
+                (
+                  <ErrorMessage name="email" component='p'></ErrorMessage>
+                )
+              }
 
-            <label htmlFor="service">
-              <span>Servicios</span>
-              <Field
-                className="input"
-                as="select"
-                id="service"
-                name="service">
-                <option value="" label="Seleccione un servicio" />
-                <option value="security" label="Seguridad" />
-                <option value="maintenance" label="Mantenimiento" />
-                <option value="web-development" label="Desarrollo web" />
-                <option value="cloud-services" label="Servicio de cloud" />
-                <option value="business-optimization" label="Optimización de negocio" />
-                <option value="business-intelligence" label="Inteligencia de negocio" />
-              </Field>
-            </label>
+              <label htmlFor="service">
+                <span>Servicios</span>
+                <Field
+                  className="input"
+                  as="select"
+                  id="service"
+                  name="service">
+                  {selectOptions.map(service => (
+                    <option key={service.value} value={service.value} label={service.label}>
+                    </option>
+                  ))}
+                </Field>
+              </label>
 
-            {
-              errors.service && touched.service &&
-              (
-                <ErrorMessage name="service" component='div'></ErrorMessage>
-              )
-            }
+              {
+                errors.service && touched.service &&
+                (
+                  <ErrorMessage name="service" component='div'></ErrorMessage>
+                )
+              }
 
-            <label htmlFor="message">
-              <span>Mensaje</span>
-              <Field className="input"
-                id="message"
-                name="message"
-                placeholder="message..."
-                as='textarea'
-              />
-            </label>
-            {
-              errors.message && touched.message &&
-              (
-                <ErrorMessage name="message" component='div'></ErrorMessage>
-              )
-            }
+              <label htmlFor="message">
+                <span>Mensaje</span>
+                <Field className="input"
+                  id="message"
+                  name="message"
+                  placeholder="message..."
+                  as='textarea'
+                />
+              </label>
+              {
+                errors.message && touched.message &&
+                (
+                  <ErrorMessage name="message" component='div'></ErrorMessage>
+                )
+              }
+              <label className="checkbox-label" htmlFor="checkbox_req">
+                <Field className="input"
+                  type="checkbox"
+                  id="checkbox_req"
+                  name="checkbox_req"
+                />
+                <span>He leído y acepto <Link to="/privacy-policy">política de privacidad</Link></span>
+              </label>
+              {
+                errors.checkbox && touched.checkbox &&
+                (
+                  <ErrorMessage name="checkbox" component='div'></ErrorMessage>
+                )
+              }
+              <label className="checkbox-label" htmlFor="checkbox_opc">
+                <Field className="input"
+                  type="checkbox"
+                  id="checkbox_opc"
+                  name="checkbox_opc"
+                />
+                <span>Nos gustaría que nos prestaras tu consentimiento para enviarte información comercial sobre los productos, servicios y/o novedades de AC data tech.</span>
+              </label>
 
-            <p className="paragraph-terms">AC data tech como responsable del tratamiento tratará tus datos con la finalidad de dar respuesta a tu consulta o petición. Puedes acceder, rectificar y suprimir tus datos, así como ejercer otros derechos consultando la información adicional y detallada sobre protección de datos en nuestra <Link to="/privacy-policy">política de privacidad</Link></p>
+              <button className="submit-btn" type="submit" disabled={isSubmitting}>Enviar</button>
 
-            <label className="checkbox-label" htmlFor="checkbox_req">
-              <Field className="input"
-                type="checkbox"
-                id="checkbox_req"
-                name="checkbox_req"
-              />
-              <span>He leído y acepto las condiciones contenidas en la política de privacidad sobre el tratamiento de mis datos para gestionar mi consulta o peticón</span>
-            </label>
-            {
-              errors.checkbox && touched.checkbox &&
-              (
-                <ErrorMessage name="checkbox" component='div'></ErrorMessage>
-              )
-            }
-            <label className="checkbox-label" htmlFor="checkbox_opc">
-              <Field className="input"
-                type="checkbox"
-                id="checkbox_opc"
-                name="checkbox_opc"
-              />
-              <span>Nos gustaría que nos prestaras tu consentimiento para enviarte información comercial sobre los productos, servicios y/o novedades de AC data tech.</span>
-            </label>
-
-            <button className="submit-btn" type="submit" disabled={isSubmitting}>Enviar</button>
           </Form>
         )}
       </Formik>
-    </div>
+    </section>
   )
 }
 

@@ -4,6 +4,9 @@ import '../styles/maintenance-details.css'
 const MaintenanceDetails = () => {
   return (
     <section>
+      <div className="header-maintenance">
+        <h2>Mantenimiento</h2>
+      </div>
       <div className="container-fluid maintenance-details">
         <Service path="/security" title="Seguridad" />
         <Service path="/cloud" title="Servicios en la nube" />

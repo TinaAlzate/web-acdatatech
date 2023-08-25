@@ -4,6 +4,9 @@ import '../styles/optimization-details.css'
 const OptimizationDetails = () => {
   return (
     <section>
+      <div className="header-optimization">
+        <h2>Optimización de negocio</h2>
+      </div>
       <div className="container-fluid optimization-details">
         <Service path="/security" title="Seguridad" />
         <Service path="/maintenance" title="Mantenimiento" />

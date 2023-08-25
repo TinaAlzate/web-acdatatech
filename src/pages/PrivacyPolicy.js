@@ -1,6 +1,7 @@
 const PrivacyPolicy = () => {
   const style = {
-    'text-align': 'justify'
+    textAlign: 'justify',
+    margin: '5rem'
   }
   return (
     <div className="container" style={style}>

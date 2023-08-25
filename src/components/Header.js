@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import '../styles/header.css'
 // import imagen from '../assets/images/header-acarvajal.svg'
 // import imagen from '../assets/images/header.png'
-import imagen1 from '../assets/images/header1.jpg'
-import imagen2 from '../assets/images/header2.jpg'
-import imagen3 from '../assets/images/header3.jpg'
+import imagen1 from '../assets/images/consultoría-tecnológica.jpg'
+import imagen2 from '../assets/images/análisis-datos.jpg'
+import imagen3 from '../assets/images/inteligencia-negocio.jpg'
 
 const Header = () => {
   const title = [
