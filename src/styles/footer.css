@@ -6,7 +6,7 @@
   & .information-contain {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
 
 
@@ -18,13 +18,12 @@
       }
     }
 
-
     & .contain-services {
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
 
-      & h6 {
+      & h5 {
         letter-spacing: 0.2rem;
       }
 
@@ -41,10 +40,11 @@
             color: #fff;
             font-style: italic;
             text-decoration: none;
+            transition: all 0.5s;
           }
 
-          & a:hover {
-            text-decoration: underline;
+          & a:hover, a:active, a:focus {
+            color: rgba(255, 255, 255, 0.6) !important;
           }
         }
       }
@@ -55,36 +55,28 @@
       flex-direction: column;
       margin: 0;
 
-      & h6 {
+      & h5 {
         letter-spacing: 0.2rem;
       }
 
-      & span {
+      & a {
         font-style: italic;
+        color: #fff;
+        text-decoration: none;
       }
 
       & .button-footer {
-        margin: auto;
-        width: 80%;
-        text-align: center;
+
         text-decoration: none;
-        margin-top: 1rem;
-        letter-spacing: 0.3rem;
-        font-weight: bold;
-        background-color: transparent;
         color: #fff;
-        padding: 0.3rem 0.6rem;
-        border: #fff solid 0.125rem;
-        border-radius: 1rem;
+        transition: all 0.5s;
+
       }
 
-      .button-footer:hover {
-        border-color: #1466c3;
-        box-shadow: #1466c3 0 0 0.188rem 0;
-        font-size: 1.05rem;
+      .button-footer:hover,  .button-footer:focus, .button-footer:active{
+        color: rgba(255, 255, 255, 0.6)
       }
     }
-
   }
 
   & hr {
@@ -93,7 +85,7 @@
 
   & .policy-contain {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 
     & ul {
       display: flex;
@@ -106,11 +98,45 @@
         font-size: 0.9rem;
         text-decoration: none;
         color: white;
+        transition: all 0.5s;
       }
 
-      .item-link:hover {
-        text-decoration: underline;
+      .item-link:hover, .item-link:active, .item-link:focus {
+        color: rgba(255, 255, 255, 0.6) !important;
       }
     }
+  }
+}
+
+@media(width <=576px) {
+  .section-footer {
+    & .information-contain {
+      text-align: center;
+      justify-content: center;
+      row-gap: 2rem;
+
+      & .logo-footer {
+        width: 55%;
+      }
+
+      & .contain-services {
+        width: 100%;
+        align-items: center;
+      }
+
+      & .contact-us {
+        width: 100%;
+
+        & .button-footer {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (width < 992px) {
+  .section-footer {
+    padding: 2rem;
   }
 }

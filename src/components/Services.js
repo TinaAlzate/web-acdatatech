@@ -1,20 +1,40 @@
-import '../styles/services.css'
+/* eslint-disable no-unused-vars */
 import { Service } from '../components/Service.js'
+import '../styles/services.css'
 
-const Services = () => {
+export const Services = () => {
+  const servicesItem = [
+    {
+      path: '/security',
+      title: 'Seguridad'
+    },
+    {
+      path: '/maintenance',
+      title: 'Mantenimiento'
+    },
+    {
+      path: '/cloud',
+      title: 'Servicios en la nube'
+    },
+    {
+      path: '/web-development',
+      title: 'Desarrollo web'
+    },
+    {
+      path: '/business-optimization',
+      title: 'Optimización de negocio'
+    },
+    {
+      path: '/business-intelligence',
+      title: 'Inteligencia de negocio'
+    }
+  ]
   return (
     <section className="section-services container-fluid">
       <h2>Nuestros servicios tecnológicos</h2>
       <div className="services-items">
-        <Service path="/security" title="Seguridad" />
-        <Service path="/maintenance" title="Mantenimiento" />
-        <Service path="/cloud" title="Servicios en la nube" />
-        <Service path="/web-development" title="Desarrollo web" />
-        <Service path="/business-optimization" title="Optimización de negocio" />
-        <Service path="/business-intelligence" title="Inteligencia de negocio" />
+        <Service items={servicesItem} title={`${servicesItem}`} />
       </div>
     </section>
   )
 }
-
-export default Services

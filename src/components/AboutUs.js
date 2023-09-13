@@ -1,13 +1,11 @@
 /* eslint-disable no-unused-vars */
+import { IconCompromise, IconPassion, IconInnovation } from './icons/IconsAboutUs'
 import '../styles/aboutus.css'
-import IconCompromise from './icons/IconCompromise'
-import IconPassion from './icons/IconPassion'
-import IconInnovation from './icons/IconInnovation'
 
-const AboutUs = () => {
+export const AboutUs = () => {
   return (
     <section className="section-about container-fluid">
-    <h2>Lo que nos diferencia</h2>
+      <h2>Lo que nos diferencia</h2>
       <div className="about-items">
         <div className="contain-about">
           <div className='item-about'>
@@ -30,5 +28,3 @@ const AboutUs = () => {
     </section>
   )
 }
-
-export default AboutUs

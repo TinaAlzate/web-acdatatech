@@ -27,7 +27,7 @@ export const AccordionItem = ({ id, title, icon, content }) => {
 
 export const Accordion = ({ items }) => {
   return (
-    <div className="accordion container-fluid mt-5" id="accordionExample">
+    <div className="accordion" id="accordionExample">
       {items.map((item, index) => (
         <AccordionItem
           key={index}

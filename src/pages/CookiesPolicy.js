@@ -1,10 +1,21 @@
-const CookiesPolicy = () => {
+/* eslint-disable no-unused-vars */
+import { Helmet } from 'react-helmet'
+
+export const CookiesPolicy = () => {
   const style = {
-    textAlign: 'justify',
-    margin: '5rem'
+    textAlign: 'justify'
+  }
+  const style2 = {
+    maxWidth: '100%',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
   }
   return (
-    <div className="container" style={style}>
+    <section className="section-policy-cookies container my-5 py-5" style={style}>
+      <Helmet>
+        <title>Política de cookies | AC datatech</title>
+      </Helmet>
       <h2>Política de cookies</h2>
       <span>Una cookie es un archivo de información que el servidor de este sitio web envía al dispositivo (ordenador, smartphone, tablet, etc.) de quien accede a la página para almacenar y recuperar información sobre la navegación que se efectúa desde dicho equipo.</span>
 
@@ -12,7 +23,7 @@ const CookiesPolicy = () => {
 
       <span className="w-100">DOMINIIO_WEB utiliza en este sitio web las cookies que se detallan a continuación:</span>
 
-      <ol>
+      <ol className="p-3">
         <li>
           <span>COOKIES TÉCNICAS</span>
           <p>Son aquéllas que permiten al USUARIO la navegación a través de la página web y la utilización de las diferentes opciones o servicios que en ella existen como, por ejemplo, controlar el tráfico y la comunicación de datos, identificar la sesión, acceder a partes de acceso restringido, recordar los elementos que integran un pedido, realizar el proceso de compra de un pedido, realizar la solicitud de inscripción o participación en un evento, utilizar elementos de seguridad durante la navegación, almacenar contenidos para la difusión de vídeos o sonido o compartir contenidos a través de redes sociales.</p>
@@ -23,11 +34,19 @@ const CookiesPolicy = () => {
           <p>Son cookies de terceros (Google Inc.) de análisis que permiten el seguimiento y análisis del comportamiento de los USUARIOS de los sitios web a los que están vinculadas. La información recogida mediante este tipo de cookies se utiliza en la medición de la actividad de los sitios web, aplicación o plataforma y para la elaboración de perfiles de navegación de los USUARIOS de dichos sitios, aplicaciones y plataformas, con el fin de introducir mejoras en función del análisis de los datos de uso que hacen los USUARIOS del servicio.</p>
           <p>Google Analytics, almacena las cookies en servidores ubicados en Estados Unidos y se compromete a no compartirla con terceros, excepto en los casos en los que sea necesario para el funcionamiento del sistema o cuando la ley obligue a tal efecto. Según Google no guarda la dirección IP del USUARIO.</p>
           <p>Más información sobre Google Analytics en los siguientes enlaces:</p>
-          <ul>
+          <ul className="px-3">
             <li>https://support.google.com/analytics/</li>
-            <li>http://www.google.com/intl/es/policies/privacy/</li>
+            <li>
+              <div style={style2}>
+                Chrome, desde: http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647
+              </div>
+            </li>
             <span>Si deseas información sobre el uso que Google da a las cookies adjuntamos este otro enlace:</span>
-            <li>https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage?hl=es&csw=1</li>
+            <li>
+              <div style={style2}>
+                https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage?hl=es&csw=1
+              </div>
+            </li>
           </ul>
         </li><br></br>
 
@@ -39,12 +58,16 @@ const CookiesPolicy = () => {
 
       <span className="w-100">El usuario podrá <strong>en cualquier momento</strong> elegir qué cookies quiere que funcionen en este sitio web mediante:</span>
 
-      <ol>
+      <ol className="p-3">
         <li>
           <p>la configuración del navegador; por ejemplo:</p>
-          <ul>
+          <ul className="px-3">
 
-            <li>Chrome, desde: http://support.google.com/chrome/bin/answer.py?hl=es&answer=95647</li>
+            <li>
+              <div style={style2}>
+                Chrome, desde: http://support.google.com/chrome/bin/answer.py?hl=es&answer=95647
+              </div>
+            </li>
 
             <li>Explorer, desde: http://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9</li>
 
@@ -63,8 +86,6 @@ const CookiesPolicy = () => {
       <span>Los navegadores web son las herramientas encargadas de almacenar las cookies y desde esos navegadores debes efectuar tu derecho a eliminación o desactivación de las mismas. Ni esta web ni sus representantes legales pueden garantizar la correcta o incorrecta manipulación de las cookies por parte de los mencionados navegadores.</span>
       <span className="w-100">En algunos casos es necesario instalar cookies para que el navegador no olvide tu decisión de no aceptación de las mismas.</span>
       <span>La aceptación de la presente política de cookies implica que el usuario ha sido informado de una forma clara y completa sobre el uso de dispositivos de almacenamiento y recuperación de datos (cookies) así como que DOMINIO_WEB dispone del consentimiento del usuario para el uso de las mismas tal y como establece el artículo 22 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE).</span>
-    </div>
+    </section>
   )
 }
-
-export default CookiesPolicy

@@ -1,17 +1,17 @@
-import AboutUs from '../components/AboutUs'
-import Customers from '../components/Customers'
-import Header from '../components/Header'
-import Services from '../components/Services'
+/* eslint-disable no-unused-vars */
+import { Services, AboutUs, Header, Customers } from '../components'
+import { Helmet } from 'react-helmet'
 
-const Home = () => {
+export const Home = () => {
   return (
-    <main>
+    <>
+      <Helmet>
+        <title>Inicio | AC datatech</title>
+      </Helmet>
       <Header />
       <Services />
       <Customers />
       <AboutUs />
-    </main>
+    </>
   )
 }
-
-export default Home

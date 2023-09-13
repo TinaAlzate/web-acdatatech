@@ -1,9 +1,0 @@
-.page-notfound{
-  margin-bottom: 5rem;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  & .parr-notfound{
-    font-size:1.2rem;
-  }
-}

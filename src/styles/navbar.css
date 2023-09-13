@@ -1,18 +1,26 @@
 .navbar {
-  margin-bottom: 3.8rem;
-  z-index: 40;
+  height: 4rem;
+  z-index: 3;
   display: flex;
   top: 0;
   width: 100%;
-  padding: 0.3rem 3rem !important;
+  padding: 0.3rem 2rem !important;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
+  overflow-y: inherit;
 
   & .logo-nav {
-    width: 10%;
-    & .img-logo{
-      width: 100%;
+    width: 11%;
+
+    & .navbar-brand {
+      padding: 0;
+      margin: 0;
+
+      & .img-logo {
+        width: 100%;
+      }
     }
+
   }
 
   & .navbar-toggler:focus {
@@ -23,15 +31,14 @@
     color: #000;
     letter-spacing: 0.1rem;
     font-weight: 600;
-    transition-property: all;
-    transition-duration: 2s;
+    transition: all 0.5s;
+
   }
-  .nav-link:hover,
-  .nav-link:focus {
-    color: #000;
-    text-decoration: underline;
+  .nav-link:hover, .nav-link:active, .nav-link:focus {
+    color:rgba(0, 0, 0, 0.6)  !important;
   }
-  
+
+
   & .dropdown-menu {
     left: auto !important;
     margin-top: 0 !important;
@@ -40,3 +47,14 @@
 
 }
 
+@media (width < 768px) {
+  .navbar {
+    padding: 0.5rem 1rem !important;
+    height: auto !important;
+
+    & .logo-nav {
+      width: 16%;
+
+    }
+  }
+}

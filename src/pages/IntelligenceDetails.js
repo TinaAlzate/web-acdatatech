@@ -1,11 +1,11 @@
-import { Accordion } from '../components/AccordionItem'
-import ContactForm from '../components/ContactForm'
-import { Service } from '../components/Service'
-import { Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7 } from '../components/icons/IconsWebDetails'
-import '../styles/intelligence-details.css'
+/* eslint-disable no-unused-vars */
+import { IconScrollDown, Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7 } from '../components/icons'
+import { Helmet } from 'react-helmet'
+import { Accordion, ContactForm, Service } from '../components'
+import '../styles/services-details.css'
 
-const IntelligenceDetails = () => {
-  const items = [
+export const IntelligenceDetails = () => {
+  const itemsIntelligence = [
     {
       icon: <Icon1 />,
       title: 'Páginas web',
@@ -42,28 +42,61 @@ const IntelligenceDetails = () => {
       content: 'Realizamos el diseño de páginas webs en siguiendo los más estrictos estándares de calidad y usabilidad de usuario para diseñar webs con una alta probabilidad de conversión y de generar negocio para tu empresa. Usamos tecnologías como AdobeXD, PhotoShop, Figma, Google Fonts, entre otros, para ofrecerte el mejor diseño web.'
     }
   ]
+
+  const othersIntelligence = [
+    {
+      path: '/security',
+      title: 'Seguridad'
+    },
+    {
+      path: '/maintenance',
+      title: 'Mantenimiento'
+    },
+    {
+      path: '/cloud',
+      title: 'Servicios en la nube'
+    },
+    {
+      path: '/web-development',
+      title: 'Desarrollo web'
+    },
+    {
+      path: '/business-optimization',
+      title: 'Optimización de negocio'
+    }
+  ]
+
   return (
-    <section>
-      <div className="header-intelligence">
-        <h2>Inteligencia de negocio</h2>
-      </div>
+    <section className="section-intelligence details">
+      <Helmet>
+        <title>Inteligencia de negocio | AC datatech</title>
+      </Helmet>
 
-      <div className="accordion container-fluid d-flex" id="accordionExample">
-        <div className="w-100">
-          <Accordion items={items} />
+      <div className="header-services-details">
+        <div className="container-img intelligence">
+          <h1>Inteligencia de negocio</h1>
+          <a className="btn-scroll" href="#contact">
+            <div className="btn-scroll-box"><IconScrollDown /></div>
+            <span className="btn-scroll-text">Más información</span>
+          </a>
         </div>
-        <ContactForm />
       </div>
 
-      <div className="container-fluid intelligence-details">
-        <Service path="/security" title="Seguridad" />
-        <Service path="/maintenance" title="Mantenimiento" />
-        <Service path="/cloud" title="Servicios en la nube" />
-        <Service path="/web-development" title="Desarrollo web" />
-        <Service path="/business-optimization" title="Optimización de negocio" />
+      <div className="body-services-details container-fluid" id="accordionExample">
+        <div className="accordion">
+          <Accordion items={itemsIntelligence} />
+        </div>
+        <div className="form-contact-details">
+          <ContactForm />
+        </div>
+      </div>
+
+      <div className="other-services container-fluid">
+        <h2 className="title-others-servicies">Otros servicios que podrían interesarte</h2>
+        <div className="items-details os-intelligence">
+          <Service items={othersIntelligence} />
+        </div>
       </div>
     </section>
   )
 }
-
-export default IntelligenceDetails

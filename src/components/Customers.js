@@ -1,12 +1,11 @@
+/* eslint-disable no-unused-vars */
+import { SlidesShow } from './SlidesShow'
 import '../styles/slideshow.css'
-import SlidesShow from './SlidesShow'
 
-const Customers = () => {
+export const Customers = () => {
   return (
     <section className="section-customers containerfluid" id="customers">
       <SlidesShow />
     </section>
   )
 }
-
-export default Customers

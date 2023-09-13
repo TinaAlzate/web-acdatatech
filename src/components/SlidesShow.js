@@ -1,18 +1,10 @@
 import { useRef, useEffect } from 'react'
-import byphasse from '../assets/images/byphasse.jpg'
-import caixa from '../assets/images/caixa.jpg'
-import cosmocare from '../assets/images/cosmocare.jpg'
-import economistes from '../assets/images/BCN-economistes.png'
-import biltrec from '../assets/images/biltrec.png'
-import decroly from '../assets/images/escola-decroly.png'
-import mcbit from '../assets/images/mcbit.png'
-import cec from '../assets/images/colegio-economistas-cataluña.gif'
-import teide from '../assets/images/teide.png'
+import { byphasse, caixa, cosmocare, economistes, biltrec, decroly, mcbit, cec, teide } from '../assets/images'
 import '../styles/slideshow.css'
 
 const imageList = [byphasse, caixa, cosmocare, economistes, biltrec, decroly, mcbit, teide, cec]
 
-const SlidesShow = () => {
+export const SlidesShow = () => {
   const slides = useRef(null)
 
   useEffect(() => {
@@ -39,12 +31,10 @@ const SlidesShow = () => {
       <div ref={slides} className="carrusel-items">
         {imageList.map((imageSrc, index) => (
           <div className="carrusel-item" key={index}>
-            <img className="logo-customers" src={imageSrc} alt={`Image ${index}`} />
+            <img className="logo-customers" src={imageSrc} alt={'Servicios tecnológicos para empresas'} />
           </div>
         ))}
       </div>
     </div>
   )
 }
-
-export default SlidesShow

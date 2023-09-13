@@ -1,12 +1,11 @@
-import { Accordion } from '../components/AccordionItem'
-import { Service } from '../components/Service'
-import '../styles/web-details.css'
-import { Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7 } from '../components/icons/IconsWebDetails'
-import ContactForm from '../components/ContactForm'
-import { IconScrollDown } from '../components/icons/IconScrollDown'
+/* eslint-disable no-unused-vars */
+import { IconScrollDown, Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7 } from '../components/icons'
+import { Helmet } from 'react-helmet'
+import { Accordion, Service, ContactForm } from '../components'
+import '../styles/services-details.css'
 
-const WebDetails = () => {
-  const items = [
+export const WebDetails = () => {
+  const itemsWeb = [
     {
       icon: <Icon1 />,
       title: 'Páginas web',
@@ -44,49 +43,60 @@ const WebDetails = () => {
     }
   ]
 
-  const titleForm = 'Completa el formulario y te responderemos a la brevedad posible.'
-
-  const subtitleForm = 'En un mundo impulsado por la tecnología, estamos aquí para impulsarte a ti. Cuéntanos en que podemos ayudarte a lograr tus metas mediante nuestras soluciones innovadoras. '
+  const othersWeb = [
+    {
+      path: '/security',
+      title: 'Seguridad'
+    },
+    {
+      path: '/maintenance',
+      title: 'Mantenimiento'
+    },
+    {
+      path: '/cloud',
+      title: 'Servicios en la nube'
+    },
+    {
+      path: '/business-optimization',
+      title: 'Optimización de negocio'
+    },
+    {
+      path: '/business-intelligence',
+      title: 'Inteligencia de negocio'
+    }
+  ]
 
   return (
-    <section className="section-web-details">
+    <section className="section-web details">
+      <Helmet>
+        <title>Desarrollo web | AC datatech</title>
+      </Helmet>
 
-      <div className='header-development'>
-
-        <div className="container-img">
-          <h2>Desarrollo web</h2>
+      <div className='header-services-details'>
+        <div className="container-img web">
+          <h1>Desarrollo web</h1>
           <a className="btn-scroll" href="#contact">
             <div className="btn-scroll-box"><IconScrollDown /></div>
             <span className="btn-scroll-text">Más información</span>
           </a>
         </div>
-
-        <div className="accordion container-fluid" id="accordionExample">
-          <div>
-            <Accordion items={items} />
-          </div>
-        </div>
-
       </div>
 
-      <ContactForm page='page-services' title={titleForm} subtitle={subtitleForm} />
-
-      <div className="body-development container-fluid">
-
-        <h3 className="title-others-servicies">Otros de nuestros servicios</h3>
-
-        <div className="web-details">
-          <Service path="/security" title="Seguridad" />
-          <Service path="/maintenance" title="Mantenimiento" />
-          <Service path="/cloud" title="Servicios en la nube" />
-          <Service path="/business-optimization" title="Optimización de negocio" />
-          <Service path="/business-intelligence" title="Inteligencia de negocio" />
+      <div className="body-services-details container-fluid" id="accordionExample">
+        <div className="accordion">
+          <Accordion items={itemsWeb} />
         </div>
-
+        <div className="form-contact-details">
+          <ContactForm />
+        </div>
       </div>
 
+      <div className="other-services container-fluid">
+        <h2 className="title-others-servicies">Otros servicios que podrían interesarte</h2>
+        <div className="items-details os-web">
+          <Service items={othersWeb} />
+        </div>
+      </div>
     </section>
   )
 }
-
-export default WebDetails

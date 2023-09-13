@@ -1,149 +1,148 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+/* eslint-disable no-unused-vars */
 import * as Yup from 'yup'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { ExternalLink } from './Footer'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import '../styles/contact.css'
 
-const ContactForm = ({ page, title, subtitle }) => {
+export const ContactForm = () => {
   const contactSchema = Yup.object().shape(
     {
-      email: Yup.string()
-        .email('Formato de email invalido')
-        .required('Email es un campo obligatorio'),
-      service: Yup.string()
-        .required('Servicios es un campo obligatorio'),
-      message: Yup.string()
-        .required('Mensaje es un campo obligatorio'),
-      checkbox_req: Yup.boolean()
-        .required('Debes aceptar nuestra política de privacidad para poder continuar'),
+      email: Yup.string().trim().email('Formato de email invalido').required('Email es un campo obligatorio'),
+      service: Yup.string().trim().required('Servicios es un campo obligatorio'),
+      message: Yup.string().trim().required('Mensaje es un campo obligatorio').uppercase(),
+      checkbox_req: Yup.boolean().required('Debes aceptar nuestra política de privacidad para poder continuar'),
       checkbox_opc: Yup.boolean()
     }
   )
 
-  const location = useLocation()
-  const urlValue = location.pathname
+  const { pathname } = useLocation()
 
   const selectOptions = [
     { value: '', label: 'Seleccione un servicio' },
     { value: 'security', label: 'Seguridad' },
     { value: 'maintenance', label: 'Mantenimiento' },
     { value: 'web-development', label: 'Desarrollo web' },
-    { value: 'cloud-services', label: 'Servicio de cloud' },
+    { value: 'cloud', label: 'Servicios en la nube' },
     { value: 'business-optimization', label: 'Optimización de negocio' },
     { value: 'business-intelligence', label: 'Inteligencia de negocio' }
   ]
 
-  const selectedOption = selectOptions.find(service => `/${service.value}` === urlValue)
+  const selectedOption = selectOptions.find(service => `/${service.value}` === pathname)
+
+  const funhandleSubmit = (values) => {
+    console.log(values) // Aquí hacemos la petición
+    fetch()
+  }
 
   const initialCredentials = {
     person_id: 2,
     email: '',
     message: '',
     service: selectedOption ? selectedOption.value : '',
-    checkbox_req: '',
+    checkbox_req: false,
     checkbox_opc: false
   }
 
-  // const handleSubmit = (values, { resetForm }) => {
-  //   console.log(values) // Aquí hacemos la petición
-  //   resetForm()
-  // }
-
   return (
-    <section className={`container-fluid section-form ${page === 'page-services' && 'page-services'} `} id="contact">
-      <div className="header-form">
-        <h2>{title}</h2>
-        <p>{subtitle}</p>
-      </div>
-      <Formik
-        initialValues={initialCredentials}
-        validationSchema={contactSchema}
-      // onSubmit={handleSubmit}
-      >
+    <Formik
+      initialValues={initialCredentials}
+      validationSchema={contactSchema}
+      onSubmit={funhandleSubmit}
+    >
 
-        {({
-          touched,
-          errors,
-          isSubmitting
-        }) => (
-          <Form className='form'>
+      {({
+        values,
+        touched,
+        errors,
+        handleSubmit,
+        isSubmitting
+      }) => (
+        <Form className='contact-form' id='contact'>
 
-              <label htmlFor="email">
-                <span>Correo electronico</span>
-                <Field className="input" id="email" type="email" name="email" placeholder="example@email.com" />
-              </label>
-              {
-                errors.email && touched.email &&
-                (
-                  <ErrorMessage name="email" component='p'></ErrorMessage>
-                )
-              }
+          <label htmlFor="email">
+            <span>Correo electronico</span>
+            <Field
+              className="input"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="example@email.com"
+            />
+          </label>
+          {
+            errors.email && touched.email &&
+            (
+              <ErrorMessage name="email" component='div'></ErrorMessage>
+            )
+          }
 
-              <label htmlFor="service">
-                <span>Servicios</span>
-                <Field
-                  className="input"
-                  as="select"
-                  id="service"
-                  name="service">
-                  {selectOptions.map(service => (
-                    <option key={service.value} value={service.value} label={service.label}>
-                    </option>
-                  ))}
-                </Field>
-              </label>
+          <label htmlFor="service">
+            <span>Servicios</span>
+            <Field
 
-              {
-                errors.service && touched.service &&
-                (
-                  <ErrorMessage name="service" component='div'></ErrorMessage>
-                )
-              }
+              className="input"
+              as="select"
+              id="service"
+              name="service">
+              {selectOptions.map(service => (
+                <option key={service.value} value={service.value} label={service.label}>
+                </option>
+              ))}
+            </Field>
+          </label>
 
-              <label htmlFor="message">
-                <span>Mensaje</span>
-                <Field className="input"
-                  id="message"
-                  name="message"
-                  placeholder="message..."
-                  as='textarea'
-                />
-              </label>
-              {
-                errors.message && touched.message &&
-                (
-                  <ErrorMessage name="message" component='div'></ErrorMessage>
-                )
-              }
-              <label className="checkbox-label" htmlFor="checkbox_req">
-                <Field className="input"
-                  type="checkbox"
-                  id="checkbox_req"
-                  name="checkbox_req"
-                />
-                <span>He leído y acepto <Link to="/privacy-policy">política de privacidad</Link></span>
-              </label>
-              {
-                errors.checkbox && touched.checkbox &&
-                (
-                  <ErrorMessage name="checkbox" component='div'></ErrorMessage>
-                )
-              }
-              <label className="checkbox-label" htmlFor="checkbox_opc">
-                <Field className="input"
-                  type="checkbox"
-                  id="checkbox_opc"
-                  name="checkbox_opc"
-                />
-                <span>Nos gustaría que nos prestaras tu consentimiento para enviarte información comercial sobre los productos, servicios y/o novedades de AC data tech.</span>
-              </label>
+          {
+            errors.service && touched.service &&
+            (
+              <ErrorMessage name="service" component='div'></ErrorMessage>
+            )
+          }
 
-              <button className="submit-btn" type="submit" disabled={isSubmitting}>Enviar</button>
+          <label htmlFor="message">
+            <span>Mensaje</span>
+            <Field
+              className="input"
+              id="message"
+              name="message"
+              placeholder="message..."
+              as='textarea'
+            />
+          </label>
+          {
+            errors.message && touched.message &&
+            (
+              <ErrorMessage name="message" component='span'></ErrorMessage>
+            )
+          }
+          <label className="checkbox-label" htmlFor="checkbox_req">
+            <Field
+              className="input"
+              type="checkbox"
+              id="checkbox_req"
+              name="checkbox_req"
+            />
+            <span>He leído y acepto <ExternalLink to="/privacy-policy" children='política de privacidad' /></span>
+          </label>
+          {
+            errors.checkbox && touched.checkbox &&
+            (
+              <ErrorMessage name="checkbox_req" component='div'></ErrorMessage>
+            )
+          }
+          <label className="checkbox-label" htmlFor="checkbox_opc">
+            <Field
+              className="input"
+              type="checkbox"
+              id="checkbox_opc"
+              name="checkbox_opc"
+            />
+            <span>Nos gustaría que nos prestaras tu consentimiento para enviarte información comercial sobre los productos, servicios y/o novedades de AC data tech.</span>
+          </label>
 
-          </Form>
-        )}
-      </Formik>
-    </section>
+          <button className="submit-btn" type="submit">Enviar</button>
+        </Form>
+      )}
+    </Formik>
   )
 }
-
-export default ContactForm
