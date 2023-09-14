@@ -121,6 +121,10 @@
     font-size: 1.2rem;
     cursor: pointer;
   }
+    & .submit-btn[disabled] {
+      opacity: 0.3;
+      pointer-events: none;
+    }
 
   .submit-btn:hover,
   .submit-btn:focus,

@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import * as Yup from 'yup'
-import { useLocation } from 'react-router-dom'
-import { ExternalLink } from './Footer'
+import { Link, useLocation } from 'react-router-dom'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import '../styles/contact.css'
 import axios from 'axios'
@@ -65,9 +64,10 @@ export const ContactForm = () => {
   //     })
   // }
 
-  const funhandleSubmit = (values) => {
+  const funhandleSubmit = (values, { resetForm }) => {
     if (values.bulkEmail) {
       console.log(values)
+      resetForm()
       return Swal.fire({
         position: 'center',
         icon: 'success',
@@ -121,7 +121,7 @@ export const ContactForm = () => {
           {
             errors.email && touched.email &&
             (
-              <ErrorMessage name="email" component='div'></ErrorMessage>
+              <ErrorMessage name="email" component='small' style={{ color: '#1466C3' }}></ErrorMessage>
             )
           }
 
@@ -143,7 +143,7 @@ export const ContactForm = () => {
           {
             errors.service && touched.service &&
             (
-              <ErrorMessage name="service" component='div'></ErrorMessage>
+              <ErrorMessage name="service" component='small' style={{ color: '#1466C3' }}></ErrorMessage>
             )
           }
 
@@ -160,7 +160,7 @@ export const ContactForm = () => {
           {
             errors.message && touched.message &&
             (
-              <ErrorMessage name="message" component='span'></ErrorMessage>
+              <ErrorMessage name="message" component='small' style={{ color: '#1466C3' }}></ErrorMessage>
             )
           }
           <label className="checkbox-label" htmlFor="conditions">
@@ -170,12 +170,12 @@ export const ContactForm = () => {
               id="conditions"
               name="conditions"
             />
-            <span>He leído y acepto <ExternalLink to="/privacy-policy" children='política de privacidad' /></span>
+            <span>He leído y acepto <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de privacidad AC datatech" className="item-link">Política de privacidad</Link></span>
           </label>
           {
             errors.conditions && touched.conditions &&
             (
-              <ErrorMessage name="conditions" component='span'></ErrorMessage>
+              <ErrorMessage name="conditions" component='small' style={{ color: '#1466C3' }}></ErrorMessage>
             )
           }
           <label className="checkbox-label" htmlFor="bulkEmail">
@@ -188,9 +188,10 @@ export const ContactForm = () => {
             <span>Nos gustaría que nos prestaras tu consentimiento para enviarte información comercial sobre los productos, servicios y/o novedades de AC data tech.</span>
           </label>
 
-          <button className="submit-btn" type="submit" /* disabled={isSubmitting} */>Enviar</button>
+          <button className="submit-btn" type="submit" disabled={isSubmitting}>Enviar</button>
         </Form>
-      )}
-    </Formik>
+      )
+      }
+    </Formik >
   )
 }

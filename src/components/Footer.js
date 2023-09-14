@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom'
 import { IconEmail, IconForm, IconPhone } from './icons/IconsFooter'
 import '../styles/footer.css'
 
-export const ExternalLink = ({ to, children }) => (
-  <a href={to} target="_blank" rel="noopener noreferrer nofollow" className="item-link" title={`${children} AC datatech`}>
-    {children}
-  </a>
-)
 export const Footer = () => {
   const servicesItem = [
     {
@@ -75,8 +70,8 @@ export const Footer = () => {
 
       <div className="policy-contain">
         <ul>
-          <ExternalLink to="/privacy-policy">Política de privacidad</ExternalLink>
-          <ExternalLink to="/cookies-policy">Política de cookies</ExternalLink>
+          <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de privacidad AC datatech" className="item-link">Política de privacidad</Link>
+          <Link to="/cookies-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de cookies AC datatech" className="item-link">Política de cookies</Link>
         </ul>
       </div>
     </footer>

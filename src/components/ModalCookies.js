@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
+import { Link } from 'react-router-dom'
 import '../styles/policies.css'
 import { useEffect, useState } from 'react'
-import { ExternalLink } from './Footer'
 
 export const ModalCookies = () => {
   const storage = window.localStorage
@@ -34,7 +34,7 @@ export const ModalCookies = () => {
     <div className="modal-cookies">
       <div className="modal-content-cookie">
         <div className="contain-parr-cookies">
-          <p>AC datatech utiliza cookies para mejorar su experiencia en línea. Para utilizar este sitio web, ¿Usted acepta nuestra <ExternalLink to='/cookies-policy' children="política de cookies" />?</p>
+          <p>AC datatech utiliza cookies para mejorar su experiencia en línea. Para utilizar este sitio web, ¿Usted acepta nuestra <Link to="/cookies-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de cookies AC datatech" className="item-link">Política de Cookies</Link>?</p>
         </div>
         <div className="contain-buttons-cookies">
           <button onClick={acceptCookies} className="accept-button-cookie">Aceptar</button>
