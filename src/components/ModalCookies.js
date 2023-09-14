@@ -5,6 +5,7 @@ import { ExternalLink } from './Footer'
 
 export const ModalCookies = () => {
   const storage = window.localStorage
+  const [initialized, setInitialized] = useState(false)
   const [acceptedCookies, setAcceptedCookies] = useState(false)
   const [showModal, setShowModal] = useState(true)
 
@@ -14,8 +15,8 @@ export const ModalCookies = () => {
       setAcceptedCookies(true)
       setShowModal(false)
     }
+    setInitialized(true)
   }, [])
-
   const acceptCookies = () => {
     storage.setItem('acceptedCookies', 'true')
     setAcceptedCookies(true)
@@ -25,7 +26,7 @@ export const ModalCookies = () => {
   const deniedCookie = () => {
     setShowModal(false)
   }
-  if (!showModal || acceptedCookies) {
+  if (!initialized || !showModal || acceptedCookies) {
     return null
   }
 

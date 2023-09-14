@@ -5,6 +5,7 @@ import { ExternalLink } from './Footer'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import '../styles/contact.css'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 export const ContactForm = () => {
   const contactSchema = Yup.object().shape(
@@ -36,16 +37,52 @@ export const ContactForm = () => {
   //   axios.post(URL_API, values)
   //     .then(function (response) {
   //       console.log(values)
-  //       const { token, user } = response
+  //       Swal.fire({
+  //         position: 'center',
+  //         icon: 'success',
+  //         title: 'Solicitud enviada',
+  //         text: 'Nos pondremos en contacto en breve.',
+  //         showConfirmButton: false,
+  //         timer: 2000
+  //       })
+  //       const { token } = response
   //       window.Cookies.set('token', token)
   //       console.log(response)
   //     })
   //     .catch(function (error) {
-  //       console.log(error)
+  //       if (axios.isAxiosError(error)) {
+  //         return {
+  //           message: error.response?.data.message
+  //         }
+  //       }
+  //       return Swal.fire({
+  //        icon: 'error',
+  //        title: 'No se puedo enviar la solicitud',
+  //        text: 'Por favor inténtalo nuevamente.',
+  //        showConfirmButton: false
+  //       })
+  //
   //     })
   // }
+
   const funhandleSubmit = (values) => {
-    console.log(values)
+    if (values.bulkEmail) {
+      console.log(values)
+      return Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Solicitud enviada',
+        text: 'Nos pondremos en contacto en breve.',
+        showConfirmButton: false,
+        timer: 2000
+      })
+    }
+    return Swal.fire({
+      icon: 'error',
+      title: 'No se puedo enviar la solicitud',
+      text: 'Por favor inténtalo nuevamente.',
+      showConfirmButton: false
+    })
   }
 
   const initialCredentials = {
@@ -54,7 +91,7 @@ export const ContactForm = () => {
     message: '',
     service: selectedOption ? selectedOption.value : '',
     conditions: '',
-    bulkEmail: ''
+    bulkEmail: false
   }
 
   return (
@@ -65,10 +102,8 @@ export const ContactForm = () => {
     >
 
       {({
-        values,
         touched,
         errors,
-        handleSubmit,
         isSubmitting
       }) => (
         <Form className='contact-form' id='contact'>
@@ -153,7 +188,7 @@ export const ContactForm = () => {
             <span>Nos gustaría que nos prestaras tu consentimiento para enviarte información comercial sobre los productos, servicios y/o novedades de AC data tech.</span>
           </label>
 
-          <button className="submit-btn" type="submit">Enviar</button>
+          <button className="submit-btn" type="submit" /* disabled={isSubmitting} */>Enviar</button>
         </Form>
       )}
     </Formik>
