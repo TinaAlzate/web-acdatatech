@@ -74,7 +74,7 @@ export const OptimizationDetails = () => {
 
       <div className="header-services-details">
         <div className="container-img optimization">
-          <h1>Optimización de negocio</h1>
+          <h1 className="title-services-details">Optimización de negocio</h1>
           <a className="btn-scroll" href="#contact">
             <div className="btn-scroll-box"><IconScrollDown /></div>
             <span className="btn-scroll-text">Más información</span>

@@ -74,7 +74,7 @@ export const IntelligenceDetails = () => {
 
       <div className="header-services-details">
         <div className="container-img intelligence">
-          <h1>Inteligencia de negocio</h1>
+          <h1 className="title-services-details">Inteligencia de negocio</h1>
           <a className="btn-scroll" href="#contact">
             <div className="btn-scroll-box"><IconScrollDown /></div>
             <span className="btn-scroll-text">Más información</span>

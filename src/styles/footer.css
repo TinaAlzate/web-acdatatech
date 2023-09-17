@@ -2,141 +2,137 @@
   background-color: #1f1f1f;
   padding: 2rem 5rem 1rem 5rem;
   color: white;
-
-  & .information-contain {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-around;
-
-
-    & .logo-footer {
-      width: 25%;
-
-      & .img-contain {
-        width: 100%;
-      }
-    }
-
-    & .contain-services {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-
-      & h5 {
-        letter-spacing: 0.2rem;
-      }
-
-      & .list-services {
-        display: flex;
-        align-items: flex-end;
-
-        & ul {
-          padding: 0;
-          margin: 0;
-          list-style-type: none;
-
-          & a {
-            color: #fff;
-            font-style: italic;
-            text-decoration: none;
-            transition: all 0.5s;
-          }
-
-          & a:hover, a:active, a:focus {
-            color: rgba(255, 255, 255, 0.6) !important;
-          }
-        }
-      }
-    }
-
-    & .contact-us {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-
-      & h5 {
-        letter-spacing: 0.2rem;
-      }
-
-      & a {
-        font-style: italic;
-        color: #fff;
-        text-decoration: none;
-      }
-
-      & .button-footer {
-
-        text-decoration: none;
-        color: #fff;
-        transition: all 0.5s;
-
-      }
-
-      .button-footer:hover,  .button-footer:focus, .button-footer:active{
-        color: rgba(255, 255, 255, 0.6)
-      }
-    }
-  }
-
-  & hr {
-    box-shadow: #fff 0 0 0.188rem 0;
-  }
-
-  & .policy-contain {
-    display: flex;
-    justify-content: flex-end;
-
-    & ul {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-
-      & .item-link {
-        font-size: 0.9rem;
-        text-decoration: none;
-        color: white;
-        transition: all 0.5s;
-      }
-
-      .item-link:hover, .item-link:active, .item-link:focus {
-        color: rgba(255, 255, 255, 0.6) !important;
-      }
-    }
-  }
 }
 
-@media(width <=576px) {
-  .section-footer {
-    & .information-contain {
-      text-align: center;
-      justify-content: center;
-      row-gap: 2rem;
-
-      & .logo-footer {
-        width: 55%;
-      }
-
-      & .contain-services {
-        width: 100%;
-        align-items: center;
-      }
-
-      & .contact-us {
-        width: 100%;
-
-        & .button-footer {
-          width: auto;
-        }
-      }
-    }
-  }
+.information-contain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
-@media (width < 992px) {
+.logo-footer {
+  width: 25%;
+}
+
+.logo-contain {
+  width: 100%;
+}
+
+
+.contain-services {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-list-footer {
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.contain-list-services {
+  display: flex;
+  align-items: flex-end;
+}
+
+.list-services {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.item-list-service {
+  color: #fff;
+  font-style: italic;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.item-list-service:hover,
+.item-list-service:active,
+.item-list-service:focus {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.link-footer-contact {
+  font-style: italic;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.link-footer-contact:hover,
+.link-footer-contact:focus,
+.link-footer-contact:active {
+  color: rgba(255, 255, 255, 0.6)
+}
+
+hr {
+  box-shadow: #fff 0 0 0.188rem 0;
+}
+
+.policy-contain {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.list-policies {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.item-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s;
+}
+
+.item-link:hover,
+.item-link:active,
+.item-link:focus {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+
+@media(max-width: 576px) {
+  .information-contain {
+    text-align: center;
+    justify-content: center;
+    row-gap: 2rem;
+  }
+
+  .logo-footer {
+    width: 70%;
+  }
+
+  .contain-services {
+    width: 100%;
+    font-size: 1.3rem;
+    align-items: center;
+  }
+
+  .contact-us {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+    .title-list-footer {
+      font-size: 1.6rem;
+    }
+
+}
+
+@media (max-width: 992px) {
   .section-footer {
-    padding: 2rem;
+    padding: 1rem;
   }
 }

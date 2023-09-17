@@ -13,30 +13,33 @@
   box-shadow: 0.125rem 0.25rem 0.75rem rgba(0, 0, 0, .08);
   transition: all .3s cubic-bezier(0, 0, .5, 1);
   text-decoration: none;
-
-  & .title-service {
-    z-index: 1;
-    font-size: 1.7rem;
-    font-weight: 600;
-    color: #fff;
-    padding: 0rem 0.1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    background-color: none !important;
-  }
-
-  & .link-service {
-    z-index: 1;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: #fff;
-    letter-spacing: 0.2rem;
-
-    & span {
-      color: #1466c3;
-    }
-  }
 }
+
+.title-service {
+  z-index: 1;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 0rem 0.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background-color: none !important;
+}
+
+.link-service {
+  z-index: 1;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.2rem;
+}
+
+.link-service span {
+  color: #1466c3;
+  font-weight: bolder;
+}
+
+
 
 .service::before {
   content: "";
@@ -57,12 +60,16 @@
   transform: scale3d(1.01, 1.01, 1.01);
 }
 
-@media(width < 768px) {
+@media(max-width: 768px) {
   .service {
     padding: 0 .4rem 0.5rem .4rem;
-
-    & .title-service {
-      font-size: 1.4rem;
-    }
   }
+
+  .title-service {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+    .link-service {
+      font-size: 0.9rem;
+    }
 }

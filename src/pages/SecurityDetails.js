@@ -74,7 +74,7 @@ export const SecurityDetails = () => {
 
       <div className="header-services-details">
         <div className="container-img security">
-          <h1>Seguridad</h1>
+          <h1 className="title-services-details">Seguridad</h1>
           <a className="btn-scroll" href="#contact">
             <div className="btn-scroll-box"><IconScrollDown /></div>
             <span className="btn-scroll-text">Más información</span>

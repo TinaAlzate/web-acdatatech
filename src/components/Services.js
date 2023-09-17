@@ -31,9 +31,9 @@ export const Services = () => {
   ]
   return (
     <section className="section-services container-fluid">
-      <h2>Nuestros servicios tecnológicos</h2>
+      <h2 className="title-services-home">Nuestros servicios tecnológicos</h2>
       <div className="services-items">
-        <Service items={servicesItem} title={`${servicesItem}`} />
+        <Service items={servicesItem} title={`${servicesItem}`}/>
       </div>
     </section>
   )

@@ -10,13 +10,13 @@ export const Contact = () => {
       </Helmet>
 
       <div className="header-contact">
-        <h1>Contáctanos</h1>
+        <h1 className='title-page-contact'>Contáctanos</h1>
       </div>
 
       <div className="body-contact container-fluid">
         <div className="title-form">
-          <h2>Conecta a un mejor futuro con nuestros servicios tecnológicos</h2>
-          <p>Bienvenido a nuestro espacio dedicado a la innovación. Estamos aquí para entender tus desafíos y brindarte soluciones tecnológicas a medida. Por favor, completa el siguiente formulario para que podamos empezar a trabajar juntos.</p>
+          <h2 className="subtitle-page-contact">Conecta a un mejor futuro con nuestros servicios tecnológicos</h2>
+          <p className="parr-page-contact">Bienvenido a nuestro espacio dedicado a la innovación. Estamos aquí para entender tus desafíos y brindarte soluciones tecnológicas a medida. Por favor, completa el siguiente formulario para que podamos empezar a trabajar juntos.</p>
         </div>
         <div className="form-content">
           <ContactForm />

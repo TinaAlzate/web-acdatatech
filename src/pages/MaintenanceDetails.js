@@ -74,7 +74,7 @@ export const MaintenanceDetails = () => {
 
       <div className="header-services-details">
         <div className="container-img maintenance">
-          <h1>Mantenimiento</h1>
+          <h1 className="title-services-details">Mantenimiento</h1>
           <a className="btn-scroll" href="#contact">
             <div className="btn-scroll-box"><IconScrollDown /></div>
             <span className="btn-scroll-text">Más información</span>

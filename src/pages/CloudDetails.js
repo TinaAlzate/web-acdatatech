@@ -74,7 +74,7 @@ export const CloudDetails = () => {
 
       <div className="header-services-details">
         <div className="container-img cloud">
-          <h1>Servicios en la nube</h1>
+          <h1 className="title-services-details">Servicios en la nube</h1>
           <a className="btn-scroll" href="#contact">
             <div className="btn-scroll-box"><IconScrollDown /></div>
             <span className="btn-scroll-text">Más información</span>

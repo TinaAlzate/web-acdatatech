@@ -108,8 +108,8 @@ export const ContactForm = () => {
       }) => (
         <Form className='contact-form' id='contact'>
 
-          <label htmlFor="email">
-            <span>Correo electronico</span>
+          <label htmlFor="email" className="label-form-input">
+            <span className="name-label">Correo electronico</span>
             <Field
               className="input"
               id="email"
@@ -125,8 +125,8 @@ export const ContactForm = () => {
             )
           }
 
-          <label htmlFor="service">
-            <span>Servicios</span>
+          <label htmlFor="service" className="label-form-input">
+            <span className="name-label">Servicios</span>
             <Field
 
               className="input"
@@ -134,7 +134,7 @@ export const ContactForm = () => {
               id="service"
               name="service">
               {selectOptions.map(service => (
-                <option key={service.value} value={service.value} label={service.label}>
+                <option key={service.value} value={service.value}>{service.label}
                 </option>
               ))}
             </Field>
@@ -147,8 +147,8 @@ export const ContactForm = () => {
             )
           }
 
-          <label htmlFor="message">
-            <span>Mensaje</span>
+          <label htmlFor="message" className="label-form-input">
+            <span className="className=">Mensaje</span>
             <Field
               className="input"
               id="message"
@@ -163,14 +163,14 @@ export const ContactForm = () => {
               <ErrorMessage name="message" component='small' style={{ color: '#1466C3' }}></ErrorMessage>
             )
           }
-          <label className="checkbox-label" htmlFor="conditions">
+          <label className="checkbox-label-form" htmlFor="conditions">
             <Field
               className="input"
               type="checkbox"
               id="conditions"
               name="conditions"
             />
-            <span>He leído y acepto <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de privacidad AC datatech" className="item-link">Política de privacidad</Link></span>
+            <span>He leído y acepto la <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de privacidad AC datatech" className="item-link-form">política de privacidad</Link></span>
           </label>
           {
             errors.conditions && touched.conditions &&
@@ -178,7 +178,7 @@ export const ContactForm = () => {
               <ErrorMessage name="conditions" component='small' style={{ color: '#1466C3' }}></ErrorMessage>
             )
           }
-          <label className="checkbox-label" htmlFor="bulkEmail">
+          <label className="checkbox-label-form" htmlFor="bulkEmail">
             <Field
               className="input"
               type="checkbox"

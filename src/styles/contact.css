@@ -1,54 +1,53 @@
 /* contact section styles */
-.section-contact {
 
-  .header-contact {
-    display: grid;
-    grid-template-rows: 70% auto;
-    grid-template-columns: 3rem auto;
-    margin-top: 4.2rem;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 37%, rgba(0, 0, 0, 0.8) 100%), url(../assets/images/contacto-ACdatatech.jpg);
-    height: 75vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.header-contact {
+  display: grid;
+  grid-template-rows: 70% auto;
+  grid-template-columns: 3rem auto;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 37%, rgba(0, 0, 0, 0.8) 100%), url(../assets/images/contacto-ACdatatech.jpg);
+  height: 75vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-    & h1 {
-      font-size: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2rem;
-      font-weight: 700;
-      grid-area: 2/2/3/3;
-      color: #fff;
-    }
-  }
+.title-page-contact {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+  grid-area: 2/2/3/3;
+  color: #fff;
+}
 
-  & .body-contact {
-    display: flex;
-    max-width: 100%;
-    gap: 3rem;
-    margin: 7rem 0;
 
-    & .title-form {
-      padding: 1rem;
-      width: 100%;
+.body-contact {
+  display: flex;
+  max-width: 100%;
+  gap: 3rem;
+  margin: 7rem 0;
+}
 
-      & h2 {
-        font-size: 2.3rem;
-      }
+.title-form {
+  padding: 1rem;
+  width: 100%;
+}
 
-      & p {
-        font-size: 1.1rem;
-        color: #999;
-      }
-    }
+.subtitle-page-contact {
+  font-size: 2.3rem;
+}
 
-    & .form-content {
-      width: 100%;
-      box-shadow: 0.125rem 0.25rem 1rem rgba(0, 0, 0, .16);
-      padding: 1rem;
-      border-radius: 0.5rem;
-    }
-  }
+.parr-page-contact {
+  font-size: 1.1rem;
+  color: #999;
+}
+
+
+.form-content {
+  width: 100%;
+  box-shadow: 0.125rem 0.25rem 1rem rgba(0, 0, 0, .16);
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 /* contactForm component styles */
@@ -59,96 +58,93 @@
   align-items: stretch;
   justify-content: center;
   gap: 1rem;
+}
 
-  & label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+.label-form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
 
-    & span {
-      font-weight: 700;
-      padding-left: 0.3rem;
-    }
+.name-label {
+  font-weight: 700;
+  padding-left: 0.3rem;
+}
 
-    & .input {
-      width: 100%;
-      background-color: #f3f3f4;
-      border: none;
-      padding: 5px 17px;
-      border-radius: 10px;
-      outline: none;
-      font-size: 1rem;
-      transition: background-color 0.2s, border 0.2s, box-shadow 0.2s;
-    }
+.input {
+  width: 100%;
+  background-color: #f3f3f4;
+  border: none;
+  padding: 5px 17px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
 
-    .input:hover,
-    .input:focus,
-    .input:active {
-      background-color: white;
-      border: solid 1px #f3f3f4;
-      box-shadow: 0 0 4px #1466c3;
-    }
-  }
+.input:hover,
+.input:focus,
+.input:active {
+  background-color: white;
+  border: solid 1px #f3f3f4;
+  box-shadow: 0 0 4px #1466c3;
+}
 
-  & .checkbox-label {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.checkbox-label-form span {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
 
-    & span {
-      font-weight: 700;
-      font-size: 0.9rem;
-
-      & a {
-        color: #999;
-        text-decoration: none;
-      }
-    }
-
-    & input[type="checkbox"] {
-      width: auto;
-    }
-  }
-
-  & .submit-btn {
-    background-color: #1466c3;
-    color: white;
-    font-weight: 500;
-    text-align: center;
-    padding: 5px;
-    border: none;
-    border-radius: 0.6rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-    & .submit-btn[disabled] {
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-  .submit-btn:hover,
-  .submit-btn:focus,
-  .submit-btn:active {
-    opacity: 0.75;
-  }
-
+.item-link-form {
+  color: #999;
+  text-decoration: none;
+    transition: all 0.25s;
+}
+.item-link-form:hover {
+  color: #000;
+  text-decoration: underline;
 }
 
 
-@media(width < 768px) {
-  .section-contact {
+.input[type="checkbox"]{
+  width: auto;
+}
 
-    .header-contact {
-      grid-template-columns: auto;
-      padding-bottom: 2rem;
+.submit-btn {
+  background-color: #1466c3;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  padding: 5px;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 
-      & h1 {
-        font-size: 2.5rem;
-      }
-    }
+.submit-btn[disabled] {
+  opacity: 0.3;
+  pointer-events: none;
+}
 
-    & .body-contact {
-      flex-wrap: wrap;
-    }
+.submit-btn:hover,
+.submit-btn:focus,
+.submit-btn:active {
+  opacity: 0.75;
+}
+
+@media(max-width: 768px) {
+
+  .header-contact {
+    grid-template-columns: auto;
+    padding-bottom: 2rem;
+  }
+
+  .title-page-contact {
+    font-size: 2.5rem;
+  }
+
+  .body-contact {
+    flex-wrap: wrap;
   }
 }
