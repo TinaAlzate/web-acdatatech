@@ -1,6 +1,6 @@
 export const IconNotFound = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="690px" viewBox="0 220 1080 600">
+    <svg xmlns="http://www.w3.org/2000/svg" width="460px" viewBox="0 220 1080 600">
       <path xmlns="http://www.w3.org/2000/svg" opacity="0.07" fill="#2A94F4" d="M216.861,768.599c0-189.286,153.447-342.733,342.733-342.733  s342.733,153.447,342.733,342.733" />
       <g xmlns="http://www.w3.org/2000/svg" opacity="0.2">
         <g>
