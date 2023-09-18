@@ -19,7 +19,7 @@ export const AccordionItem = ({ id, title, icon, content }) => {
         className="accordion-collapse collapse"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body">{content}</div>
+        <div className="accordion-body p-3">{content}</div>
       </div>
     </div>
   )

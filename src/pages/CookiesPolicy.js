@@ -12,7 +12,7 @@ export const CookiesPolicy = () => {
     whiteSpace: 'nowrap'
   }
   return (
-    <section className="section-policy-cookies container my-5 py-5" style={style}>
+    <section className="section-policy-cookies container-fluid p-4" style={style}>
       <Helmet>
         <title>Política de cookies | AC datatech</title>
       </Helmet>
@@ -23,7 +23,7 @@ export const CookiesPolicy = () => {
 
       <span className="w-100">DOMINIIO_WEB utiliza en este sitio web las cookies que se detallan a continuación:</span>
 
-      <ol className="p-3">
+      <ol className="p-4">
         <li>
           <span>COOKIES TÉCNICAS</span>
           <p>Son aquéllas que permiten al USUARIO la navegación a través de la página web y la utilización de las diferentes opciones o servicios que en ella existen como, por ejemplo, controlar el tráfico y la comunicación de datos, identificar la sesión, acceder a partes de acceso restringido, recordar los elementos que integran un pedido, realizar el proceso de compra de un pedido, realizar la solicitud de inscripción o participación en un evento, utilizar elementos de seguridad durante la navegación, almacenar contenidos para la difusión de vídeos o sonido o compartir contenidos a través de redes sociales.</p>

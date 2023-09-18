@@ -6,12 +6,12 @@ export const PrivacyPolicy = () => {
     textAlign: 'justify'
   }
   return (
-      <div className="container my-5 py-4" style={style}>
+      <div className="container-fluid py-4" style={style}>
         <Helmet>
           <title>Política de privacidad | AC datatech</title>
         </Helmet>
         <h2>Política de privacidad</h2>
-        <ol className="p-3">
+        <ol className="p-4">
           <li>
             <span>DATOS IDENTIFICATIVOS</span>
             <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación, se reflejan los siguientes datos: la empresa titular de dominio web es NOMBRE_EMPRESA, con domicilio a estos efectos en C/CALLE número de C.I.F.:  N.º inscrita en el REGISTRO MERCANTIL DE BARCELONA, TOMO N.º, FOLIO N.º, HOJA N.º. Correo electrónico de contacto: EMAIL_EMPRESA del sitio web.</p>

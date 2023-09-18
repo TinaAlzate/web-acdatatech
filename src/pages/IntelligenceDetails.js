@@ -83,7 +83,7 @@ export const IntelligenceDetails = () => {
       </div>
 
       <div className="body-services-details container-fluid" id="accordionExample">
-        <div className="accordion">
+        <div className="accordion p-0">
           <Accordion items={itemsIntelligence} />
         </div>
         <div className="form-contact-details">

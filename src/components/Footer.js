@@ -62,7 +62,7 @@ export const Footer = () => {
           <h5 className="title-list-footer">Contáctanos</h5>
           <a className="link-footer-contact" href="tel:+34635792224" title="Llamar AC datatech"><IconPhone /> +34 635 792 224</a>
           <a className="link-footer-contact" href="mailto:info@acdatatech.com" title="Enviar email AC datatech"><IconEmail /> info@acdatatech.com</a>
-          <a className="link-footer-contact" href="mailto:contact@acdatatech.com" title="Enviar email AC datatech">&nbsp; &nbsp; contact@acdatatech.com</a>
+          <a className="link-footer-contact" href="mailto:contact@acdatatech.com" title="Enviar email AC datatech">contact@acdatatech.com</a>
           <Link to="/contact" className="link-footer-contact" title="Contacto AC datatech"><IconForm /> Ponerme en contacto</Link>
         </div>
       </div>
@@ -71,8 +71,8 @@ export const Footer = () => {
 
       <div className="policy-contain">
         <ul className="list-policies">
-          <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de privacidad AC datatech" className="item-link">Política de privacidad</Link>
-          <Link to="/cookies-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de cookies AC datatech" className="item-link">Política de cookies</Link>
+          <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de privacidad AC datatech" className="item-link-pfooter">Política de privacidad</Link>
+          <Link to="/cookies-policy" target="_blank" rel="noopener noreferrer nofollow" title="Política de cookies AC datatech" className="item-link-pfooter">Política de cookies</Link>
         </ul>
       </div>
     </footer>

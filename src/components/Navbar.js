@@ -8,9 +8,9 @@ export const Navbar = () => {
     <nav className="menu-container">
 
       <input type="checkbox" aria-label="Toggle menu" />
-      <span></span>
-      <span></span>
-      <span></span>
+      <span className="span1"></span>
+      <span className="span2"></span>
+      <span className="span3"></span>
 
       <Link to="/" className="menu-logo"><img src={logo} alt="Logo AC datatech" /></Link>
 
@@ -24,7 +24,7 @@ export const Navbar = () => {
             <a title="Servicios tecnológicos AC datatech" className="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Servicios
             </a>
-            <div className="dropdown-menu">
+            <div className="dropdown-menu mt-3 mt-md-4">
               <Link rel="canonical" className="dropdown-item" to="/security">Seguridad</Link>
               <Link rel="canonical" className="dropdown-item" to="/maintenance">Mantenimiento</Link>
               <Link rel="canonical" className="dropdown-item" to="/web-development">Desarrollo web</Link>
@@ -41,6 +41,7 @@ export const Navbar = () => {
 
         <ul className="p-2 contain-lg nav-link-menu">
           <li className="list-btn-lg"><button className="button-nav-lg">EN</button></li>
+          <p className="line-lg">|</p>
           <li className="list-btn-lg"><button className="button-nav-lg">ES</button></li>
         </ul>
       </div>

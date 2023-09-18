@@ -53,21 +53,34 @@
 /* Burger menu */
 .menu-container span {
   display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
+  /* width: 33px; */
+  height: 2px;
+  margin: 3px;
   position: relative;
   background: #000;
   border-radius: 3px;
   z-index: 1;
-  transform-origin: 4px 0px;
+  transform-origin: 6px 0px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
     opacity 0.55s ease;
 }
 
+.span1 {
+  width: 33px;
+}
+
+.span2 {
+  width: 27px;
+}
+
+.span3 {
+  width: 20px;
+}
+
 .menu-container span:first-child {
   transform-origin: 0% 0%;
+
 }
 
 .menu-container span:nth-child(3) {
@@ -87,6 +100,7 @@
 
 .menu-container input:checked~span:nth-child(3) {
   transform: rotate(-45deg) translate(-5px, 11px);
+  width: 33px;
 }
 
 .nav-link-menu {
@@ -98,18 +112,21 @@
 }
 
 .button-nav-lg {
-  border-radius: 50%;
+  font-size: 14px;
+  border: none;
   background: none;
-  border: 1px solid rgba(0, 0, 0, 0.4);
   color: rgba(0, 0, 0, 0.4);
-  margin: 0 10px;
   transition: all 0.2s;
+}
+
+.line-lg {
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 3px;
 }
 
 .button-nav-lg:hover,
 .button-nav-lg:focus {
 
-  border: 1px solid rgba(0, 0, 0, 0.8);
   color: rgba(0, 0, 0, 0.8);
 
 }
@@ -128,17 +145,13 @@
     background: rgba(255, 255, 255, 0.2) !important;
   }
 
-  .button-nav-lg {
-    margin: 10px 10px;
-  }
-
   .menu-container a {
-
     font-size: 1rem;
   }
 
   .menu-container {
-    position: relative;
+    top:0;
+    position: sticky;
     padding: 20px;
     flex-direction: column;
     align-items: flex-end;
@@ -146,6 +159,21 @@
 
   .item-menu {
     padding: 10px 0;
+  }
+
+  .contain-lg {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 1rem;
+  }
+
+  .button-nav-lg {
+    font-size: 20px;
+    border: none;
+    background: none;
+    color: rgba(0, 0, 0, 0.7);
+    transition: all 0.2s;
   }
 
   .menu-logo {
@@ -185,7 +213,9 @@
 /* desktop styles */
 @media only screen and (min-width: 768px) {
   .menu-container {
+    top:0;
     width: 100%;
+    position: sticky;
   }
 
   .menu-container a {
@@ -229,7 +259,6 @@
   }
 
   .dropdown-menu {
-    margin-top: 1.2rem !important;
     border-top-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
     border: none !important;

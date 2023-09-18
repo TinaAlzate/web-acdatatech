@@ -83,7 +83,7 @@ export const SecurityDetails = () => {
       </div>
 
       <div className="body-services-details container-fluid" id="accordionExample">
-        <div className="accordion">
+        <div className="accordion p-0">
           <Accordion items={itemsSecurity} />
         </div>
         <div className="form-contact-details">

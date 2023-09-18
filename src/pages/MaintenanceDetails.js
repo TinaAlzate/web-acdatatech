@@ -83,7 +83,7 @@ export const MaintenanceDetails = () => {
       </div>
 
       <div className="body-services-details container-fluid" id="accordionExample">
-        <div className="accordion">
+        <div className="accordion p-0">
           <Accordion items={itemsMaintenance} />
         </div>
         <div className="form-contact-details">

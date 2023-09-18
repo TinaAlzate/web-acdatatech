@@ -33,13 +33,13 @@
   text-align: center;
 }
 
-.item-link {
+.item-link-mcookies {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
 }
 
-.item-link:hover {
+.item-link-mcookies:hover {
   text-decoration: underline;
 }
 
@@ -74,7 +74,7 @@
 
 
 .accept-button-cookie:hover {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   border: 1px solid #fff;
 }

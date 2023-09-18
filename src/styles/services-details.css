@@ -98,6 +98,7 @@
   overflow: hidden;
   box-shadow: 0.125rem 0.25rem 0.75rem rgba(0, 0, 0, .08);
   width: 100%;
+  padding: 0.2rem;
   height: fit-content;
   --bs-accordion-bg: transparent !important;
   --bs-accordion-active-bg: transparent !important;
@@ -333,7 +334,11 @@
   }
 }
 
-
+@media (max-width: 1024px) {
+  .cloud{
+    background-image: url(../assets/images/servicios-cloud-mb.jpg);
+  }
+}
 
 @media(max-width: 768px) {
 
@@ -352,7 +357,6 @@
   .title-others-servicies {
     font-size: 2rem;
   }
-
 
   .items-details a:nth-child(1) {
     grid-area: 1 / 1 / 3 / end;
