@@ -17,6 +17,14 @@ export const ContactForm = () => {
     }
   )
 
+  const errorResponse = () => {
+    return Swal.fire({
+      icon: 'error',
+      title: 'No se puedo enviar la solicitud',
+      text: 'Por favor inténtalo nuevamente.',
+      showConfirmButton: false
+    })
+  }
   const { pathname } = useLocation()
 
   const selectOptions = [
@@ -32,57 +40,32 @@ export const ContactForm = () => {
 
   const URL_API = 'http://localhost:3003/admin/clients/create'
 
-  // const funhandleSubmit = async (values) => {
-  //   axios.post(URL_API, values)
-  //     .then(function (response) {
-  //       console.log(values)
-  //       Swal.fire({
-  //         position: 'center',
-  //         icon: 'success',
-  //         title: 'Solicitud enviada',
-  //         text: 'Nos pondremos en contacto en breve.',
-  //         showConfirmButton: false,
-  //         timer: 2000
-  //       })
-  //       const { token } = response
-  //       window.Cookies.set('token', token)
-  //       console.log(response)
-  //     })
-  //     .catch(function (error) {
-  //       if (axios.isAxiosError(error)) {
-  //         return {
-  //           message: error.response?.data.message
-  //         }
-  //       }
-  //       return Swal.fire({
-  //        icon: 'error',
-  //        title: 'No se puedo enviar la solicitud',
-  //        text: 'Por favor inténtalo nuevamente.',
-  //        showConfirmButton: false
-  //       })
-  //
-  //     })
-  // }
-
-  const funhandleSubmit = (values, { resetForm }) => {
-    if (values.bulkEmail) {
-      console.log(values)
-      resetForm()
-      return Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Solicitud enviada',
-        text: 'Nos pondremos en contacto en breve.',
-        showConfirmButton: false,
-        timer: 2000
+  const funhandleSubmit = async (values) => {
+    axios.post(URL_API, values)
+      .then(function (response) {
+        const { data } = response
+        if (data.ok) {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Solicitud enviada',
+            text: 'Nos pondremos en contacto en breve.',
+            showConfirmButton: false,
+            timer: 2000
+          })
+          return
+        }
+        errorResponse()
       })
-    }
-    return Swal.fire({
-      icon: 'error',
-      title: 'No se puedo enviar la solicitud',
-      text: 'Por favor inténtalo nuevamente.',
-      showConfirmButton: false
-    })
+      .catch(function (error) {
+        if (axios.isAxiosError(error)) {
+          errorResponse()
+          return {
+            message: error.response?.data.message
+          }
+        }
+        return errorResponse()
+      })
   }
 
   const initialCredentials = {
