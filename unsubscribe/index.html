@@ -13,7 +13,7 @@
 <body>
   <div class="bg-white">
 
-    <header class="absolute inset-x-0 top-0 z-50">
+    <header class="absolute inset-x-0 top-0 z-30">
       <nav class="flex items-center justify-start p-6 lg:px-8" aria-label="AC datatech">
         <div class="flex">
           <a href="https://www.acdatatech.com" class="-m-1.5 p-1.5">
@@ -23,7 +23,19 @@
       </nav>
     </header>
 
-    <div class="relative isolate px-6 pt-14 lg:px-8">
+    <!-- spinner -->
+    <div class="w-full h-screen absolute flex justify-center items-center hidden sppiner">
+      <div
+        class="mx-auto inline-block h-24 w-24 animate-spin rounded-full border-2 opacity-20 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+        role="status">
+        <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+          Loading...</span>
+      </div>
+    </div>
+    
+    <!-- End spinner -->
+    
+    <div class="relative isolate px-6 pt-14 lg:px-8 conatinerUnsubscribe">
       <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true">
         <div
@@ -41,7 +53,8 @@
             <a href="https://www.acdatatech.com"
               class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 tracking-widest">Visitar la web
               <span aria-hidden="true">→</span></a>
-            <button class="text-sm font-semibold leading-6 text-gray-900" id="bajaACdatatech">Darse de baja</button>
+            <button class="block text-sm font-semibold leading-6 text-gray-900 disabled:opacity-50" type="button" id="bajaACdatatech" data-open="modal1">Darse de baja</button>
+
           </div>
         </div>
       </div>
@@ -56,6 +69,31 @@
       </div>
     </div>
   </div>
+  <!-- Modal -->
+  <div class="w-full h-screen absolute z-40 top-0 flex justify-center items-center text-blac hidden modalHidden">
+    <div class="bg-violet-50 rounded-xl p-2 border-solid w-1/2 border-4 border-light-blue-500 rounded p-5 h-60"
+      id="modal1">
+      <div class="flex flex-col gap-4">
+        <div class="flex justify-end">
+          <button class="closeModal" type="button">
+            <svg class="icon icon-tabler icon-tabler-logout" width="34" height="34"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+              <path d="M9 12h12l-3 -3" />
+              <path d="M18 15l3 -3" />
+            </svg>
+          </button>
+        </div>
+        <section class="grid align-items-center text-center gap-3 sectionModal">
+          <p class="mt-6 text-2xl leading-8 text-gray-600">
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+  <!-- end modal -->
+  
 </body>
 
 </html>
