@@ -175,6 +175,6 @@ export const ContactForm = () => {
         </Form>
       )
       }
-    </Formik >
+    </Formik>
   )
 }
