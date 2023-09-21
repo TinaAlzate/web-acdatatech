@@ -38,7 +38,7 @@ export const ContactForm = () => {
   ]
   const selectedOption = selectOptions.find(service => `/${service.value}` === pathname)
 
-  const URL_API = 'http://localhost:3003/admin/clients/create'
+  const URL_API = 'http://localhost:3003/client/create'
 
   const funhandleSubmit = async (values) => {
     axios.post(URL_API, values)
