@@ -46,8 +46,10 @@ export const ContactForm = () => {
       .then(function (response) {
         const { data } = response
         if (data.ok) {
+          console.log(data)
           doneResponse()
           actions.resetForm()
+          return
         }
         errorResponse()
       })
@@ -137,7 +139,7 @@ export const ContactForm = () => {
               id="conditions"
               name="conditions"
             />
-            <span>He leído y acepto la <Link to="https://acdatatech.netlify.app/privacy-policy" rel='nofollow noopener noreferrer' title="Política de privacidad AC datatech" className="item-link-form">política de privacidad</Link></span>
+            <span>He leído y acepto la <Link to="/privacy-policy" rel='nofollow noopener noreferrer' title="Política de privacidad AC datatech" className="item-link-form">política de privacidad</Link></span>
           </label>
           {
             errors.conditions && touched.conditions &&
