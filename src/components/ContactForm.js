@@ -137,7 +137,7 @@ export const ContactForm = () => {
               id="conditions"
               name="conditions"
             />
-            <span>He leído y acepto la <a href="https://acdatatech.netlify.app/privacy-policy" rel='nofollow noopener noreferrer' title="Política de privacidad AC datatech" className="item-link-form">política de privacidad</a></span>
+            <span>He leído y acepto la <Link to="https://acdatatech.netlify.app/privacy-policy" rel='nofollow noopener noreferrer' title="Política de privacidad AC datatech" className="item-link-form">política de privacidad</Link></span>
           </label>
           {
             errors.conditions && touched.conditions &&
