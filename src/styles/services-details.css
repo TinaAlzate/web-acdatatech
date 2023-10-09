@@ -1,8 +1,6 @@
-.details {
-  background-image: radial-gradient(circle at 28% 90%, rgba(113, 113, 113, 0.03) 0%, rgba(113, 113, 113, 0.03) 24%, transparent 24%, transparent 100%), radial-gradient(circle at 84% 65%, rgba(173, 173, 173, 0.03) 0%, rgba(173, 173, 173, 0.03) 45%, transparent 45%, transparent 100%), radial-gradient(circle at 46% 12%, rgba(141, 141, 141, 0.03) 0%, rgba(141, 141, 141, 0.03) 22%, transparent 22%, transparent 100%), radial-gradient(circle at 26% 14%, rgba(119, 119, 119, 0.03) 0%, rgba(119, 119, 119, 0.03) 35%, transparent 35%, transparent 100%), radial-gradient(circle at 81% 90%, rgba(42, 42, 42, 0.03) 0%, rgba(42, 42, 42, 0.03) 40%, transparent 40%, transparent 100%), radial-gradient(circle at 28% 100%, rgba(234, 234, 234, 0.03) 0%, rgba(234, 234, 234, 0.03) 56%, transparent 56%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
-}
-
 .header-services-details {
+  margin: 0 auto;
+  max-width: 1600px;
   display: flex;
 }
 
@@ -85,7 +83,8 @@
 
 
 .body-services-details {
-  margin: 7rem 0;
+  margin: 7rem auto;
+  max-width: 1450px;
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -128,13 +127,16 @@
 
 
 .title-others-servicies {
+  margin: 0 auto;
+  max-width: 1450px;
   font-size: 2.5rem;
   letter-spacing: 0.2rem;
   color: #666;
 }
 
 .items-details {
-  margin-top: 3rem;
+  margin: 3rem auto;
+  max-width: 1450px;
   padding-bottom: 3rem;
   display: grid;
   gap: 2rem;

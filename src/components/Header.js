@@ -5,7 +5,7 @@ import '../styles/header.css'
 export const Header = () => {
   const title = [
     'Consultoría tecnológica',
-    'Análisis de datos',
+    'Optimización de procesos',
     'Inteligencia de negocio'
   ]
   const subtitle = [
@@ -32,10 +32,6 @@ export const Header = () => {
       <img className="heros" src={images[currentSlide]} alt="Servicios informáticos AC datatech" title="Servicios informáticos AC datatech" />
       <h1 className='title-header'>{title[currentSlide]}</h1>
       <h2 className="subtitle-header">{subtitle[currentSlide]}</h2>
-      {/* <div>
-        <button className="btn-lgs">EN</button>
-        <button className="btn-lgs">ES</button>
-      </div> */}
     </header>
   )
 }

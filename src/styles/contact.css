@@ -1,6 +1,8 @@
 /* contact section styles */
 
 .header-contact {
+  margin: 0 auto;
+  max-width: 1600px;
   display: grid;
   grid-template-rows: 70% auto;
   grid-template-columns: 3rem auto;
@@ -22,10 +24,10 @@
 
 
 .body-contact {
+  margin: 7rem auto;
+  max-width: 1600px;
   display: flex;
-  max-width: 100%;
   gap: 3rem;
-  margin: 7rem 0;
 }
 
 .title-form {

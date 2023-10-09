@@ -84,7 +84,7 @@ export const OptimizationDetails = () => {
 
       <div className="body-services-details container-fluid" id="accordionExample">
         <div className="accordion p-0">
-          <Accordion items={itemsOptimization} />
+          <Accordion items={ itemsOptimization } />
         </div>
         <div className="form-contact-details">
           <ContactForm />
@@ -94,7 +94,7 @@ export const OptimizationDetails = () => {
       <div className="other-services container-fluid">
         <h2 className="title-others-servicies">Otros servicios que podrían interesarte</h2>
         <div className="items-details os-optimization">
-          <Service items={othersOptimization} />
+          <Service items={ othersOptimization } />
         </div>
       </div>
 

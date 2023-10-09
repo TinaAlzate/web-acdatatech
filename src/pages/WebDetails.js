@@ -84,7 +84,7 @@ export const WebDetails = () => {
 
       <div className="body-services-details container-fluid" id="accordionExample">
         <div className="accordion p-0">
-          <Accordion items={itemsWeb} />
+          <Accordion items={ itemsWeb } />
         </div>
         <div className="form-contact-details">
           <ContactForm />
@@ -94,7 +94,7 @@ export const WebDetails = () => {
       <div className="other-services container-fluid">
         <h2 className="title-others-servicies">Otros servicios que podrían interesarte</h2>
         <div className="items-details os-web">
-          <Service items={othersWeb} />
+          <Service items={ othersWeb } />
         </div>
       </div>
     </section>

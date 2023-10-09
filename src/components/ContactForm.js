@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import * as Yup from 'yup'
+import axios from 'axios'
 import { Link, useLocation } from 'react-router-dom'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { doneResponse, errorResponse } from '../helpers/Alerts'
 import '../styles/contact.css'
-import axios from 'axios'
-import Swal from 'sweetalert2'
 
 export const ContactForm = () => {
   const contactSchema = Yup.object().shape(
@@ -17,14 +17,6 @@ export const ContactForm = () => {
     }
   )
 
-  const errorResponse = () => {
-    return Swal.fire({
-      icon: 'error',
-      title: 'No se puedo enviar la solicitud',
-      text: 'Por favor inténtalo nuevamente.',
-      showConfirmButton: false
-    })
-  }
   const { pathname } = useLocation()
 
   const selectOptions = [
@@ -38,22 +30,24 @@ export const ContactForm = () => {
   ]
   const selectedOption = selectOptions.find(service => `/${service.value}` === pathname)
 
-  const URL_API = 'http://localhost:3003/client/create'
+  const initialCredentials = {
+    person_id: 2,
+    email: '',
+    message: '',
+    service: selectedOption ? selectedOption.value : '',
+    conditions: '',
+    bulkEmail: false
+  }
 
-  const funhandleSubmit = async (values) => {
+  const URL_API = 'https://acdatatech.1.ie-1.fl0.io/client/create'
+
+  const funhandleSubmit = async (values, actions) => {
     axios.post(URL_API, values)
       .then(function (response) {
         const { data } = response
         if (data.ok) {
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Solicitud enviada',
-            text: 'Nos pondremos en contacto en breve.',
-            showConfirmButton: false,
-            timer: 2000
-          })
-          return
+          doneResponse()
+          actions.resetForm()
         }
         errorResponse()
       })
@@ -66,15 +60,6 @@ export const ContactForm = () => {
         }
         return errorResponse()
       })
-  }
-
-  const initialCredentials = {
-    person_id: 2,
-    email: '',
-    message: '',
-    service: selectedOption ? selectedOption.value : '',
-    conditions: '',
-    bulkEmail: false
   }
 
   return (
@@ -111,7 +96,6 @@ export const ContactForm = () => {
           <label htmlFor="service" className="label-form-input">
             <span className="name-label">Servicios</span>
             <Field
-
               className="input"
               as="select"
               id="service"
