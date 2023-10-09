@@ -53,7 +53,7 @@ body{
 
 @media screen and (max-width: 1133px){
   .section-header {
-      grid-template-rows: 30% 30% auto;
+      grid-template-rows: 28% 32% auto;
     }
 }
 
