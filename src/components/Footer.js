@@ -71,8 +71,8 @@ export const Footer = () => {
 
       <div className="policy-contain">
         <ul className="list-policies">
-          <Link to="/privacy-policy" reloadDocument target="_blank" title="Política de privacidad AC datatech" className="item-link-pfooter">Política de privacidad</Link>
-          <Link to="/cookies-policy" title="Política de cookies AC datatech" className="item-link-pfooter">Política de cookies</Link>
+          <a to="/privacy-policy" target="_blank" rel='nofollow noopener noreferrer' title="Política de privacidad AC datatech" className="item-link-pfooter">Política de privacidad</a>
+          <a to="/cookies-policy" target="_blank" rel='nofollow noopener noreferrer' title="Política de cookies AC datatech" className="item-link-pfooter">Política de cookies</a>
         </ul>
       </div>
     </footer>
