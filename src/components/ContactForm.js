@@ -137,7 +137,7 @@ export const ContactForm = () => {
               id="conditions"
               name="conditions"
             />
-            <span>He leído y acepto la <Link to="/privacy-policy" target="_blank" title="Política de privacidad AC datatech" className="item-link-form">política de privacidad</Link></span>
+            <span>He leído y acepto la <Link to="https://subtle-marigold-d59fcc.netlify.app/privacy-policy" target="_blank" title="Política de privacidad AC datatech" className="item-link-form">política de privacidad</Link></span>
           </label>
           {
             errors.conditions && touched.conditions &&
