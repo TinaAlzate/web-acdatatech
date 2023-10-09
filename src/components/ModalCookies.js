@@ -33,7 +33,7 @@ export const ModalCookies = () => {
     <div className="modal-cookies">
       <div className="modal-content-cookie">
         <div className="contain-parr-cookies">
-          <p className="parr-cookies">AC datatech utiliza cookies para mejorar su experiencia en línea. Para utilizar este sitio web, ¿Usted acepta nuestra <a href="/cookies-policy" rel='nofollow noopener noreferrer' title="Política de cookies AC datatech" className="item-link-mcookies">política de Cookies</a>?</p>
+          <p className="parr-cookies">AC datatech utiliza cookies para mejorar su experiencia en línea. Para utilizar este sitio web, ¿Usted acepta nuestra <Link to="/cookies-policy" rel='nofollow noopener noreferrer' title="Política de cookies AC datatech" className="item-link-mcookies">Política de Cookies</Link>?</p>
         </div>
         <div className="contain-buttons-cookies">
           <button onClick={ acceptCookies } className="accept-button-cookie">Aceptar</button>

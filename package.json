@@ -22,7 +22,6 @@
   "eslintConfig": {
     "extends": "standard"
   },
-  "homepage": "http:/www.acdatatech.com",
   "browserslist": {
     "development": [
       "last 1 chrome version",
