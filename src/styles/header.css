@@ -51,7 +51,7 @@ body{
   background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%);
 }
 
-@media screen and (max-width: 1133px){
+@media (max-width: 1133px){
   .section-header {
       grid-template-rows: 28% 32% auto;
     }
