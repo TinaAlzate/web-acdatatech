@@ -21,9 +21,7 @@
   position: absolute;
   cursor: pointer;
   opacity: 0;
-  /* hide this */
   z-index: 2;
-  /* and place it over the hamburger */
   -webkit-touch-callout: none;
 }
 
@@ -53,7 +51,6 @@
 /* Burger menu */
 .menu-container span {
   display: block;
-  /* width: 33px; */
   height: 2px;
   margin: 3px;
   position: relative;
@@ -152,6 +149,7 @@
   .menu-container {
     top:0;
     position: sticky;
+    z-index: 5;
     padding: 20px;
     flex-direction: column;
     align-items: flex-end;

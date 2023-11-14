@@ -1,6 +1,5 @@
 .header-services-details {
   margin: 0 auto;
-  max-width: 1600px;
   display: flex;
 }
 
@@ -395,5 +394,14 @@
 
   .btn-scroll-text {
     font-size: 0.8rem;
+  }
+}
+
+@media(min-width: 1500px) and (min-height: 900px) {
+  .title-services-details {
+    font-size: 5.2rem;
+  }
+  .btn-scroll-text{
+    font-size: 1.5rem;
   }
 }
